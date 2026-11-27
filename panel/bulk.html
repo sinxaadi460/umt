@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulk Certificates (Excel) | AADI</title>
+    <meta name="description"
+        content="Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one portal">
+    <meta property="og:title" content="Bulk Certificates (Excel) | AADI">
+    <meta property="og:description"
+        content="Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one portal">
+    <meta property="og:image" content="https://umtvidya.in/assets/img/logo.svg">
+    <meta property="og:url" content="https://umtvidya.in/panel/bulk.html">
+    <meta name="theme-color" content="#0b8a4a">
+    <link rel="icon" href="../assets/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Noto+Sans+Devanagari:wght@400;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/search-scroll.css">
+    <style>
+        :root {
+            --brand: #0b8a4a
+        }
+    </style>
+    <script>window.APP = { lang: "en", base: "", csrf: "8fe35934d07735bb7c296afa5f6e503fd357c59d28dae2af8a70087cef924389" };</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/bulk.css">
+        <link rel="stylesheet" href="../assets/css/umt.css">
+</head>
+
+<body class="panel panel-inst">
+    <aside class="side">
+        <div class="side-brand"><img src="../assets/img/logo.svg" alt=""><span>AADI</span></div>
+        <nav class="side-nav">
+            <div class="side-group">Main</div> <a class="" href="index.html"><i
+                    class="fa-solid fa-gauge-high"></i><span>Dashboard</span><b class="nb">1</b></a>
+            <div class="side-group">Students</div> <a class="" href="student-add.html"><i
+                    class="fa-solid fa-user-plus"></i><span>Add Student</span></a>
+            <a class="" href="bulk-students.html"><i class="fa-solid fa-users-rectangle"></i><span>Bulk
+                    Student Import</span></a>
+            <a class="" href="students.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a class="" href="students-pending.html"><i class="fa-solid fa-user-clock"></i><span>Pending
+                    Approval</span></a>
+            <a class="" href="students-left.html"><i class="fa-solid fa-user-minus"></i><span>Students who
+                    left</span></a>
+            <a class="" href="admission.html"><i class="fa-solid fa-door-open"></i><span>Online
+                    Admission</span></a>
+            <a class="" href="referrals.html"><i class="fa-solid fa-people-arrows"></i><span>Referrals &amp;
+                    Commission</span></a>
+            <a class="" href="results.html"><i class="fa-solid fa-square-poll-vertical"></i><span>Result / Marks
+                    Entry</span></a>
+            <div class="side-group">Affiliation</div> <a class="" href="affiliation.html"><i
+                    class="fa-solid fa-handshake-angle"></i><span>Get Affiliation</span></a>
+            <div class="side-group">Documents</div> <a class="" href="cert-rules.html"><i
+                    class="fa-solid fa-scale-balanced"></i><span>Certificate Rules (A/B/C)</span></a>
+            <a class="" href="generate.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate
+                    Documents</span></a>
+            <a class="active" href="bulk.html"><i class="fa-solid fa-file-excel"></i><span>Bulk
+                    Certificate</span></a>
+            <a class="" href="documents.html"><i class="fa-solid fa-folder-open"></i><span>All Issued
+                    Documents</span></a>
+            <a class="" href="documents-id_card.html"><i class="fa-solid fa-id-card"></i><span>ID
+                    Cards</span></a>
+            <a class="" href="documents-certificate.html"><i
+                    class="fa-solid fa-award"></i><span>Certificates</span></a>
+            <a class="" href="documents-marksheet.html"><i
+                    class="fa-solid fa-table-list"></i><span>Marksheets</span></a>
+            <a class="" href="documents-admit_card.html"><i class="fa-solid fa-ticket"></i><span>Admit
+                    Cards</span></a>
+            <a class="" href="designs.html"><i class="fa-solid fa-palette"></i><span>My Certificate
+                    Designs</span></a>
+            <div class="side-group">Academics</div> <a class="" href="attendance.html"><i
+                    class="fa-solid fa-calendar-check"></i><span>Attendance</span></a>
+            <a class="" href="exams.html"><i class="fa-solid fa-laptop-code"></i><span>Online Exams</span></a>
+            <a class="" href="notices.html"><i class="fa-solid fa-bullhorn"></i><span>Push Notice</span></a>
+            <a class="" href="courses.html"><i class="fa-solid fa-book"></i><span>Mere Courses</span></a>
+            <div class="side-group">Fees</div> <a class="" href="fees.html"><i
+                    class="fa-solid fa-indian-rupee-sign"></i><span>Fee Collection</span></a>
+            <a class="" href="fees-requests.html"><i class="fa-solid fa-qrcode"></i><span>Online Fee
+                    Requests</span></a>
+            <a class="" href="fees-dues.html"><i class="fa-solid fa-hourglass-half"></i><span>Fee Dues
+                    (Monthly)</span></a>
+            <a class="" href="fees-history.html"><i class="fa-solid fa-list-check"></i><span>Fee
+                    Transactions</span></a>
+            <a class="" href="fees-qr.html"><i class="fa-solid fa-gear"></i><span>My Fee QR / UPI</span></a>
+            <div class="side-group">Account</div> <a class="" href="subscription.html"><i
+                    class="fa-solid fa-crown"></i><span>Subscription &amp; Balance</span></a>
+            <a class="" href="wallet.html"><i class="fa-solid fa-wallet"></i><span>Wallet &amp;
+                    Recharge</span></a>
+            <a class="" href="sub-franchise.html"><i class="fa-solid fa-sitemap"></i><span>Sub
+                    Franchise</span></a>
+            <a class="" href="tools.html"><i class="fa-solid fa-toolbox"></i><span>Education Tools</span></a>
+            <a class="" href="staff.html"><i class="fa-solid fa-chalkboard-user"></i><span>Teachers / Staff
+                    Logins</span></a>
+            <a class="" href="trash.html"><i class="fa-solid fa-trash-can"></i><span>Trash (30 days)</span></a>
+            <div class="side-group">Help</div> <a class="" href="tickets.html"><i
+                    class="fa-solid fa-headset"></i><span>Tickets &amp; Applications</span></a>
+            <a class="" href="branch-certificate.html"><i class="fa-solid fa-award"></i><span>My
+                    Authorisation</span></a>
+            <a class="" href="kyc.html"><i class="fa-solid fa-id-card-clip"></i><span>Profile Complete /
+                    KYC</span></a>
+            <a class="" href="profile.html"><i class="fa-solid fa-id-badge"></i><span>Profile &amp;
+                    Branding</span></a>
+        </nav>
+        <a class="side-out" href="../logout.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+    <div class="side-backdrop" onclick="document.body.classList.remove('side-open')"></div>
+    <div class="panel-main">
+        <header class="ptop"><button class="side-toggle" onclick="document.body.classList.toggle('side-open')"
+                aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+            <h1>Bulk Certificates (Excel)</h1>
+            <div class="ptop-right">
+                <div class="lang-tg" title="Language"><a class=""
+                        href="../lang.html?l=hi&amp;back=%2Fpanel%2Fbulk.html">हिंglish</a><a class="on"
+                        href="../lang.html?l=en&amp;back=%2Fpanel%2Fbulk.html">EN</a></div> <a class="bell"
+                    href="students-pending.html" title="Notifications"><i
+                        class="fa-solid fa-bell"></i><b>1</b></a>
+                <span class="wallet-chip free-chip" title="Everything is free right now"><i
+                        class="fa-solid fa-gift"></i> FREE</span><a class="wallet-chip" href="wallet.html"><i
+                        class="fa-solid fa-wallet"></i> ₹0.00</a> <a class="btn btn-light btn-sm hide-sm"
+                    href="../index.html" target="_blank"><i class="fa-solid fa-globe"></i> Website</a>
+                <div class="whobox"><b><span data-u="inst.name">Lakshya Classes</span></b><small><span data-u="inst.code">BR836811</span> · <span data-u="inst.type">Coaching</span></small></div>
+            </div>
+        </header>
+        <div class="pbody">
+            <div class="tabs" style="max-width:640px"><a class="active" href="?"><i class="fa-solid fa-certificate"></i>
+                    Bulk Certificates</a><a class="" href="?mode=students"><i class="fa-solid fa-users"></i> Bulk
+                    Student Import</a></div>
+            <div class="alert alert-success small" style="margin-bottom:12px"><i class="fa-solid fa-gift"></i> Abhi
+                <b>everything is FREE</b> — no charge for certificates, documents and tools.</div>
+            <div class="bk-steps" id="bkSteps"><span data-s="1" class="on"><b>1</b> Choose certificate</span><span
+                    data-s="2" class=""><b>2</b> Download Excel</span><span data-s="3" class=""><b>3</b> Fill &amp;
+                    upload</span><span data-s="4" class=""><b>4</b> Check &amp; generate</span></div>
+
+            <div class="card" id="bk1">
+                <h3><span class="bk-n">1</span> Which certificate / document?</h3>
+                <div id="bkPicked" hidden=""></div>
+                <div id="bkPick"><input class="input" id="bkSearch"
+                        placeholder="Search by name... (marksheet, TC, custom...)"
+                        style="max-width:420px;margin-bottom:12px">
+                    <div class="bk-types" id="bkTypes"><button type="button" data-id="1" class=""><i
+                                class="fa-solid fa-award"></i><span>Course Certificate / Diploma</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="2" class=""><i
+                                class="fa-solid fa-table-list"></i><span>Marksheet</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="3"
+                            class=""><i class="fa-solid fa-id-card"></i><span>Student ID Card</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="4" class=""><i class="fa-solid fa-ticket"></i><span>Admit
+                                Card</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="5"
+                            class=""><i class="fa-solid fa-right-from-bracket"></i><span>Transfer Certificate
+                                (TC)</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="7"
+                            class=""><i class="fa-solid fa-user-check"></i><span>Character Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="8" class=""><i class="fa-solid fa-file-lines"></i><span>Bonafide
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="9"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Migration Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="10" class=""><i class="fa-solid fa-file-lines"></i><span>Course
+                                Completion Letter</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="12"
+                            class=""><i class="fa-solid fa-ticket"></i><span>Admit Card — Subject-wise Time Table
+                                (A4)</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="13"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Online Test / Exam
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="14"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Study Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="15" class=""><i class="fa-solid fa-file-lines"></i><span>Date of
+                                Birth Certificate (as per record)</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="16"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Passing Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="17" class=""><i class="fa-solid fa-file-lines"></i><span>Provisional
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="18"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Attendance Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="19" class=""><i class="fa-solid fa-file-lines"></i><span>Conduct
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="20"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>No Dues Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="21" class=""><i class="fa-solid fa-file-lines"></i><span>No Objection
+                                Certificate (NOC)</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="22"
+                            class=""><i class="fa-solid fa-indian-rupee-sign"></i><span>Fee Paid / Fee Structure
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="23"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Admission Confirmation Letter</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="24" class=""><i class="fa-solid fa-file-lines"></i><span>Enrollment /
+                                Registration Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="25"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Medium of Instruction
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="26"
+                            class=""><i class="fa-solid fa-briefcase"></i><span>Internship Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="27" class=""><i
+                                class="fa-solid fa-chalkboard-user"></i><span>Training Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="28" class=""><i class="fa-solid fa-users"></i><span>Participation
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="29"
+                            class=""><i class="fa-solid fa-trophy"></i><span>Merit / Appreciation Certificate</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button><button
+                            type="button" data-id="30" class=""><i class="fa-solid fa-medal"></i><span>Sports
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="31"
+                            class=""><i class="fa-solid fa-chalkboard"></i><span>Workshop / Seminar
+                                Certificate</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="32"
+                            class="star"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Custom Certificate (apna
+                                title + matter)</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="33"
+                            class="star"><i class="fa-solid fa-envelope-open-text"></i><span>Custom Letter / Certificate
+                                (letter style)</span><em class="badge badge-green"
+                                style="font-style:normal">FREE</em></button><button type="button" data-id="34"
+                            class=""><i class="fa-solid fa-file-lines"></i><span>Recommendation Letter</span><em
+                                class="badge badge-green" style="font-style:normal">FREE</em></button></div>
+                </div>
+            </div>
+
+            <div class="card" id="bk2" hidden="">
+                <h3><span class="bk-n">2</span> Download the Excel format</h3>
+                <div class="grid g2">
+                    <div class="field"><label>Course / Class</label><select class="input" id="bkCourse">
+                            <option value="0">Different courses (written in the Excel)</option>
+                            <option value="497">Bachelor in Science(Hons.)</option>
+                            <option value="135">Certificate in Airport Management Services</option>
+                        </select>
+                        <div class="hint" id="bkCourseHint"></div>
+                    </div>
+                    <div class="field"><label>Whose certificates?</label>
+                        <div class="bk-who"><label><input type="radio" name="bkWho" value="new" checked=""><span><b>New
+                                        students</b><small>Blank Excel, you fill it</small></span></label><label><input
+                                    type="radio" name="bkWho" value="mine"><span><b>My existing students</b><small>Names
+                                        already filled in</small></span></label></div>
+                    </div>
+                </div>
+                <div id="bkCommon"></div>
+                <div id="bkSched" hidden=""></div>
+                <div class="small" id="bkCols"></div>
+                <button class="btn btn-primary btn-lg" type="button" id="bkFormat" style="margin-top:14px"><i
+                        class="fa-solid fa-file-excel"></i> Download Excel Format</button>
+                <span class="small muted" id="bkFmtMsg" style="margin-left:8px"></span>
+            </div>
+
+            <div class="card" id="bk3">
+                <h3><span class="bk-n">3</span> Upload the filled Excel</h3>
+                <p class="small muted" id="bkEarly" style="margin:-4px 0 10px">Already have a filled format? Drop it
+                    here.</p>
+                <div class="bk-up">
+                    <label class="bk-drop" id="bkDrop"><input type="file" id="bkFile" accept=".xlsx,.xls,.csv"
+                            hidden=""><i class="fa-solid fa-cloud-arrow-up"></i><b id="bkFileName">Drop the Excel here
+                            or click</b><small>.xlsx / .xls / .csv — up to 500 at a time</small></label>
+                    <label class="bk-drop alt" id="bkDropP" hidden=""><input type="file" id="bkPhotos" accept="image/*"
+                            multiple="" hidden=""><i class="fa-solid fa-images"></i><b id="bkPhotoInfo">Student photos
+                            (optional)</b><small>File name = student name, roll no or mobile (e.g. RAHUL
+                            KUMAR.jpg)</small></label>
+                </div>
+            </div>
+
+            <div class="card" id="bk4" hidden="">
+                <div class="card-head">
+                    <h3><span class="bk-n">4</span> Check &amp; generate</h3><span class="small muted"
+                        id="bkChk"></span>
+                </div>
+                <div class="bk-sum" id="bkSum"></div>
+                <p class="small muted" style="margin:6px 0 10px"><i class="fa-solid fa-pen"></i> Click any cell to
+                    correct it right here — no need to redo the Excel.</p>
+                <div class="table-wrap" style="max-height:460px;overflow:auto">
+                    <table class="tbl bk-tbl" id="bkTbl" data-no-search=""></table>
+                </div>
+                <label class="check small" id="bkIdRow" style="margin-top:12px"><input type="checkbox" id="bkAutoId"
+                        checked=""> Also make ID cards for new students (FREE)</label>
+                <div class="row" style="margin-top:14px"><button class="btn btn-primary btn-lg" id="bkGo" type="button"
+                        disabled=""><i class="fa-solid fa-bolt"></i> <span id="bkGoTxt"></span></button><span
+                        class="small muted" id="bkNote"></span></div>
+                <div class="progress" style="margin-top:14px"><i id="bkProg"></i></div>
+                <div class="small muted" id="bkMsg" style="margin-top:6px"></div>
+                <div id="bkBill"></div>
+            </div>
+
+            <script type="application/json"
+                id="bCfg">{"mode":"docs","types":[{"id":1,"code":"certificate","name":"Course Certificate / Diploma","marks":0,"extra":[],"price":0,"multi":false,"schedule":false},{"id":2,"code":"marksheet","name":"Marksheet","marks":1,"extra":[],"price":0,"multi":false,"schedule":false},{"id":3,"code":"id_card","name":"Student ID Card","marks":0,"extra":[],"price":0,"multi":false,"schedule":false},{"id":4,"code":"admit_card","name":"Admit Card","marks":0,"extra":[{"key":"exam_name","label":"Exam Name","required":1,"long":false},{"key":"exam_date","label":"Exam Date","required":1,"long":false},{"key":"exam_time","label":"Exam Time","required":0,"long":false},{"key":"exam_center","label":"Exam Centre","required":0,"long":false}],"price":0,"multi":true,"schedule":false},{"id":5,"code":"tc","name":"Transfer Certificate (TC)","marks":0,"extra":[{"key":"leaving_date","label":"Date of Leaving","required":1,"long":false},{"key":"last_class","label":"Class Last Studied","required":1,"long":false},{"key":"reason","label":"Reason for Leaving","required":0,"long":false},{"key":"conduct","label":"Conduct","required":0,"long":false}],"price":0,"multi":false,"schedule":false},{"id":7,"code":"character","name":"Character Certificate","marks":0,"extra":[{"key":"conduct","label":"Conduct (Good / Very Good)","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":8,"code":"bonafide","name":"Bonafide Certificate","marks":0,"extra":[{"key":"purpose","label":"Purpose","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":9,"code":"migration","name":"Migration Certificate","marks":0,"extra":[],"price":0,"multi":false,"schedule":false},{"id":10,"code":"completion","name":"Course Completion Letter","marks":0,"extra":[{"key":"remarks","label":"Remarks (optional)","required":0,"long":false}],"price":0,"multi":false,"schedule":false},{"id":12,"code":"admit_card_sub","name":"Admit Card — Subject-wise Time Table (A4)","marks":0,"extra":[{"key":"exam_name","label":"Exam Name","required":1,"long":false},{"key":"exam_center","label":"Exam Centre","required":0,"long":false}],"price":0,"multi":true,"schedule":true},{"id":13,"code":"exam_cert","name":"Online Test / Exam Certificate","marks":0,"extra":[{"key":"exam_name","label":"Exam / Test Name","required":1,"long":false},{"key":"exam_score","label":"Score (e.g. 45 / 50)","required":0,"long":false},{"key":"exam_percent","label":"Percentage","required":0,"long":false},{"key":"exam_date","label":"Exam Date","required":0,"long":false}],"price":0,"multi":true,"schedule":false},{"id":14,"code":"study","name":"Study Certificate","marks":0,"extra":[],"price":0,"multi":true,"schedule":false},{"id":15,"code":"dob_cert","name":"Date of Birth Certificate (as per record)","marks":0,"extra":[],"price":0,"multi":true,"schedule":false},{"id":16,"code":"passing","name":"Passing Certificate","marks":0,"extra":[{"key":"class_passed","label":"Class / Course Passed","required":1,"long":false},{"key":"pass_year","label":"Passing Year","required":1,"long":false}],"price":0,"multi":false,"schedule":false},{"id":17,"code":"provisional","name":"Provisional Certificate","marks":0,"extra":[],"price":0,"multi":false,"schedule":false},{"id":18,"code":"attendance_cert","name":"Attendance Certificate","marks":0,"extra":[{"key":"attendance_pct","label":"Attendance %","required":1,"long":false},{"key":"from_date","label":"From Date","required":1,"long":false},{"key":"to_date","label":"To Date","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":19,"code":"conduct","name":"Conduct Certificate","marks":0,"extra":[{"key":"conduct","label":"Conduct (Good / Very Good)","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":20,"code":"no_dues","name":"No Dues Certificate","marks":0,"extra":[],"price":0,"multi":true,"schedule":false},{"id":21,"code":"noc","name":"No Objection Certificate (NOC)","marks":0,"extra":[{"key":"purpose","label":"Purpose","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":22,"code":"fee_cert","name":"Fee Paid / Fee Structure Certificate","marks":0,"extra":[{"key":"amount","label":"Amount (Rs.)","required":1,"long":false},{"key":"purpose","label":"Purpose (Income Tax / Scholarship...)","required":0,"long":false}],"price":0,"multi":true,"schedule":false},{"id":23,"code":"admission_letter","name":"Admission Confirmation Letter","marks":0,"extra":[],"price":0,"multi":false,"schedule":false},{"id":24,"code":"enrollment_cert","name":"Enrollment / Registration Certificate","marks":0,"extra":[],"price":0,"multi":false,"schedule":false},{"id":25,"code":"medium","name":"Medium of Instruction Certificate","marks":0,"extra":[{"key":"medium","label":"Medium (English / Hindi)","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":26,"code":"internship","name":"Internship Certificate","marks":0,"extra":[{"key":"project","label":"Project / Role","required":1,"long":false},{"key":"organisation","label":"Organisation","required":1,"long":false},{"key":"from_date","label":"From Date","required":1,"long":false},{"key":"to_date","label":"To Date","required":1,"long":false},{"key":"conduct","label":"Performance (Good / Excellent)","required":0,"long":false}],"price":0,"multi":true,"schedule":false},{"id":27,"code":"training","name":"Training Certificate","marks":0,"extra":[{"key":"training_name","label":"Training Name","required":1,"long":false},{"key":"from_date","label":"From Date","required":1,"long":false},{"key":"to_date","label":"To Date","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":28,"code":"participation","name":"Participation Certificate","marks":0,"extra":[{"key":"event_name","label":"Event / Competition","required":1,"long":false},{"key":"event_date","label":"Event Date","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":29,"code":"merit","name":"Merit / Appreciation Certificate","marks":0,"extra":[{"key":"achievement","label":"Achievement (e.g. Topper of the batch)","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":30,"code":"sports","name":"Sports Certificate","marks":0,"extra":[{"key":"event_name","label":"Game / Event","required":1,"long":false},{"key":"position","label":"Position (First / Second...)","required":1,"long":false},{"key":"event_date","label":"Event Date","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":31,"code":"workshop","name":"Workshop / Seminar Certificate","marks":0,"extra":[{"key":"event_name","label":"Topic","required":1,"long":false},{"key":"event_date","label":"Date","required":1,"long":false}],"price":0,"multi":true,"schedule":false},{"id":32,"code":"custom","name":"Custom Certificate (apna title + matter)","marks":0,"extra":[{"key":"cert_title","label":"Certificate ka Title (e.g. Certificate of Excellence)","required":1,"long":false},{"key":"cert_body","label":"Certificate ka matter / text ({name}, {course}, {session} likh sakte hain)","required":1,"long":true}],"price":0,"multi":true,"schedule":false},{"id":33,"code":"custom_letter","name":"Custom Letter / Certificate (letter style)","marks":0,"extra":[{"key":"cert_title","label":"Title (e.g. EXPERIENCE CERTIFICATE)","required":1,"long":false},{"key":"cert_body","label":"Letter ka matter ({name}, {father_name}, {course} likh sakte hain)","required":1,"long":true}],"price":0,"multi":true,"schedule":false},{"id":34,"code":"recommendation","name":"Recommendation Letter","marks":0,"extra":[{"key":"purpose","label":"Recommended for","required":1,"long":false},{"key":"conduct","label":"Character (Good / Excellent)","required":0,"long":false}],"price":0,"multi":true,"schedule":false}],"courses":[{"id":497,"name":"Bachelor in Science(Hons.)"},{"id":135,"name":"Certificate in Airport Management Services"}],"subjects":{},"ajax":"/ajax/bulk.html","pre":"","preCourse":0,"inst":"Lakshya Classes"}</script>
+        </div>
+    </div>
+    <a class="wa-fab"
+        href="https://wa.me/919262882138?text=Hello%20AADI%20Support%2C%20mujhe%20help%20chahiye.%0A%0AInstitute%3A%20Lakshya%20Classes%20%28BR836811%29%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Fpanel%2Fbulk.html"
+        target="_blank" rel="noopener" aria-label="WhatsApp Support" title="WhatsApp Support"><i
+            class="fa-brands fa-whatsapp"></i></a>
+    <div id="eduBot" class="ebot"
+        data-bot="{&quot;name&quot;:&quot;Vidya Didi&quot;,&quot;hello&quot;:&quot;Hello! 🙏 How can I help you? Choose a question below or type one.&quot;,&quot;faq&quot;:[{&quot;q&quot;:&quot;How do I get an institute ID?&quot;,&quot;a&quot;:&quot;Choose \&quot;College / Institute\&quot; on the Register page and fill the form. Admin verifies and activates the ID. WhatsApp for quicker service.&quot;},{&quot;q&quot;:&quot;How to create a certificate?&quot;,&quot;a&quot;:&quot;Institute panel → Documents → Generate. Choose students or upload Excel, see the preview, then Generate. Instant PDF / ZIP download.&quot;},{&quot;q&quot;:&quot;Bulk certificates from Excel?&quot;,&quot;a&quot;:&quot;Panel → Bulk Excel. Download the sample Excel, fill it, upload it. Charged per certificate, then download all in one click.&quot;},{&quot;q&quot;:&quot;How to recharge the wallet?&quot;,&quot;a&quot;:&quot;Panel → Wallet → enter the amount and Pay. The balance is added automatically as soon as the UPI payment is done.&quot;},{&quot;q&quot;:&quot;How to verify a certificate?&quot;,&quot;a&quot;:&quot;Enter the certificate number in \&quot;Verify Certificate\&quot; on the home page or scan the certificate's QR.&quot;},{&quot;q&quot;:&quot;How do students log in?&quot;,&quot;a&quot;:&quot;Login page → Student. Mobile ya Enrollment No. aur password daalein. Naye student Register → Student se free account banayein, phir dashboard se online course lein ya jitne chahein institute ko join request bhejein.&quot;}],&quot;links&quot;:[[&quot;Generate Certificate&quot;,&quot;/panel/generate.html&quot;],[&quot;Bulk Excel&quot;,&quot;/panel/bulk.html&quot;],[&quot;Add Student&quot;,&quot;/panel/student-add.html&quot;],[&quot;Subscription &amp; Balance&quot;,&quot;/panel/subscription.html&quot;]],&quot;wa&quot;:&quot;https://wa.me/919262882138?text=Hello%20AADI%20Support%2C%20mujhe%20help%20chahiye%3A%0A%0AInstitute%3A%20Lakshya%20Classes%20%28BR836811%29%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Fpanel%2Fbulk.html&quot;,&quot;phone&quot;:&quot;+919262882138&quot;}">
+        <button class="ebot-fab" type="button" aria-label="Help"><span class="ebot-face"><i class="eye l"></i><i
+                    class="eye r"></i><i class="mouth"></i></span><span class="ebot-ping"></span></button>
+        <div class="ebot-box" hidden="">
+            <div class="ebot-head"><span class="ebot-avatar"><i class="fa-solid fa-graduation-cap"></i></span>
+                <div><b>Vidya Didi</b><small>Online · Help Assistant</small></div><button type="button" class="ebot-x"
+                    aria-label="Close">×</button>
+            </div>
+            <div class="ebot-msgs"></div>
+            <div class="ebot-quick"></div>
+            <form class="ebot-form"><input type="text" placeholder="Type your question..." maxlength="200"><button
+                    aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button></form>
+        </div>
+    </div>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/search-scroll.js"></script>
+
+    
+    <script src="../assets/js/static-fix.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script type="module" src="../assets/js/umt-pages.js"></script>
+</body>
+</html>

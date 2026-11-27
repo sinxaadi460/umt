@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Student | AADI</title>
+    <meta name="description"
+        content="Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one portal">
+    <meta property="og:title" content="Add Student | AADI">
+    <meta property="og:description"
+        content="Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one portal">
+    <meta property="og:image" content="https://umtvidya.in/assets/img/logo.svg">
+    <meta property="og:url" content="https://umtvidya.in/panel/student-add.html">
+    <meta name="theme-color" content="#0b8a4a">
+    <link rel="icon" href="../assets/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Noto+Sans+Devanagari:wght@400;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/search-scroll.css">
+    <style>
+        :root {
+            --brand: #0b8a4a
+        }
+    </style>
+    <script>window.APP = { lang: "en", base: "", csrf: "8fe35934d07735bb7c296afa5f6e503fd357c59d28dae2af8a70087cef924389" };</script>
+        <link rel="stylesheet" href="../assets/css/umt.css">
+</head>
+
+<body class="panel panel-inst">
+    <aside class="side">
+        <div class="side-brand"><img src="../assets/img/logo.svg" alt=""><span>AADI</span></div>
+        <nav class="side-nav">
+            <div class="side-group">Main</div> <a class="" href="index.html"><i
+                    class="fa-solid fa-gauge-high"></i><span>Dashboard</span><b class="nb">1</b></a>
+            <div class="side-group">Students</div> <a class="active" href="student-add.html"><i
+                    class="fa-solid fa-user-plus"></i><span>Add Student</span></a>
+            <a class="" href="bulk-students.html"><i class="fa-solid fa-users-rectangle"></i><span>Bulk
+                    Student Import</span></a>
+            <a class="" href="students.html"><i class="fa-solid fa-users"></i><span>Student List</span></a>
+            <a class="" href="students-pending.html"><i class="fa-solid fa-user-clock"></i><span>Pending
+                    Approval</span><b class="nb">1</b></a>
+            <a class="" href="students-left.html"><i class="fa-solid fa-user-minus"></i><span>Students who
+                    left</span></a>
+            <a class="" href="admission.html"><i class="fa-solid fa-door-open"></i><span>Online Admission</span><b
+                    class="nb">1</b></a>
+            <a class="" href="referrals.html"><i class="fa-solid fa-people-arrows"></i><span>Referrals &amp;
+                    Commission</span></a>
+            <a class="" href="results.html"><i class="fa-solid fa-square-poll-vertical"></i><span>Result / Marks
+                    Entry</span></a>
+            <div class="side-group">Affiliation</div> <a class="" href="affiliation.html"><i
+                    class="fa-solid fa-handshake-angle"></i><span>Get Affiliation</span></a>
+            <div class="side-group">Documents</div> <a class="" href="cert-rules.html"><i
+                    class="fa-solid fa-scale-balanced"></i><span>Certificate Rules (A/B/C)</span></a>
+            <a class="" href="generate.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate
+                    Documents</span></a>
+            <a class="" href="bulk.html"><i class="fa-solid fa-file-excel"></i><span>Bulk Certificate</span></a>
+            <a class="" href="documents.html"><i class="fa-solid fa-folder-open"></i><span>All Issued
+                    Documents</span></a>
+            <a class="" href="documents-id_card.html"><i class="fa-solid fa-id-card"></i><span>ID
+                    Cards</span></a>
+            <a class="" href="documents-certificate.html"><i
+                    class="fa-solid fa-award"></i><span>Certificates</span></a>
+            <a class="" href="documents-marksheet.html"><i
+                    class="fa-solid fa-table-list"></i><span>Marksheets</span></a>
+            <a class="" href="documents-admit_card.html"><i class="fa-solid fa-ticket"></i><span>Admit
+                    Cards</span></a>
+            <a class="" href="designs.html"><i class="fa-solid fa-palette"></i><span>My Certificate
+                    Designs</span></a>
+            <div class="side-group">Academics</div> <a class="" href="attendance.html"><i
+                    class="fa-solid fa-calendar-check"></i><span>Attendance</span></a>
+            <a class="" href="exams.html"><i class="fa-solid fa-laptop-code"></i><span>Online Exams</span></a>
+            <a class="" href="notices.html"><i class="fa-solid fa-bullhorn"></i><span>Push Notice</span></a>
+            <a class="" href="courses.html"><i class="fa-solid fa-book"></i><span>Mere Courses</span></a>
+            <div class="side-group">Fees</div> <a class="" href="fees.html"><i
+                    class="fa-solid fa-indian-rupee-sign"></i><span>Fee Collection</span></a>
+            <a class="" href="fees-requests.html"><i class="fa-solid fa-qrcode"></i><span>Online Fee
+                    Requests</span></a>
+            <a class="" href="fees-dues.html"><i class="fa-solid fa-hourglass-half"></i><span>Fee Dues
+                    (Monthly)</span></a>
+            <a class="" href="fees-history.html"><i class="fa-solid fa-list-check"></i><span>Fee
+                    Transactions</span></a>
+            <a class="" href="fees-qr.html"><i class="fa-solid fa-gear"></i><span>My Fee QR / UPI</span></a>
+            <div class="side-group">Account</div> <a class="" href="subscription.html"><i
+                    class="fa-solid fa-crown"></i><span>Subscription &amp; Balance</span></a>
+            <a class="" href="wallet.html"><i class="fa-solid fa-wallet"></i><span>Wallet &amp;
+                    Recharge</span></a>
+            <a class="" href="sub-franchise.html"><i class="fa-solid fa-sitemap"></i><span>Sub
+                    Franchise</span></a>
+            <a class="" href="tools.html"><i class="fa-solid fa-toolbox"></i><span>Education Tools</span></a>
+            <a class="" href="staff.html"><i class="fa-solid fa-chalkboard-user"></i><span>Teachers / Staff
+                    Logins</span></a>
+            <a class="" href="trash.html"><i class="fa-solid fa-trash-can"></i><span>Trash (30 days)</span></a>
+            <div class="side-group">Help</div> <a class="" href="tickets.html"><i
+                    class="fa-solid fa-headset"></i><span>Tickets &amp; Applications</span></a>
+            <a class="" href="branch-certificate.html"><i class="fa-solid fa-award"></i><span>My
+                    Authorisation</span></a>
+            <a class="" href="kyc.html"><i class="fa-solid fa-id-card-clip"></i><span>Profile Complete /
+                    KYC</span></a>
+            <a class="" href="profile.html"><i class="fa-solid fa-id-badge"></i><span>Profile &amp;
+                    Branding</span></a>
+        </nav>
+        <a class="side-out" href="../logout.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+    <div class="side-backdrop" onclick="document.body.classList.remove('side-open')"></div>
+    <div class="panel-main">
+        <header class="ptop"><button class="side-toggle" onclick="document.body.classList.toggle('side-open')"
+                aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+            <h1>Add Student</h1>
+            <div class="ptop-right">
+                <div class="lang-tg" title="Language"><a class=""
+                        href="../lang.html?l=hi&amp;back=%2Fpanel%2Fstudent-add.html">हिंglish</a><a class="on"
+                        href="../lang.html?l=en&amp;back=%2Fpanel%2Fstudent-add.html">EN</a></div> <a class="bell"
+                    href="students-pending.html" title="Notifications"><i
+                        class="fa-solid fa-bell"></i><b>3</b></a>
+                <span class="wallet-chip free-chip" title="Everything is free right now"><i
+                        class="fa-solid fa-gift"></i> FREE</span><a class="wallet-chip" href="wallet.html"><i
+                        class="fa-solid fa-wallet"></i> ₹0.00</a> <a class="btn btn-light btn-sm hide-sm"
+                    href="../index.html" target="_blank"><i class="fa-solid fa-globe"></i> Website</a>
+                <div class="whobox"><b><span data-u="inst.name">Lakshya Classes</span></b><small><span data-u="inst.code">BR836811</span> · <span data-u="inst.type">Coaching</span></small></div>
+            </div>
+        </header>
+        <div class="pbody">
+            <div class="sb" id="setupBar" role="region" aria-label="Baaki kaam">
+                <div class="sb-view">
+                    <div class="sb-track">
+                        <div class="sb-s" style="--c1:#0b7a4b;--c2:#0f9d6b"><span class="sb-i"><i
+                                    class="fa-solid fa-qrcode"></i></span>
+                            <div class="sb-t"><b><em>Salah</em>Add your UPI / QR for fees</b><small><i
+                                        class="fa-solid fa-circle-check"></i> This task is done. Do the next one
+                                    now.</small></div>
+                            <div class="sb-a"><a class="sb-b" href="fees-qr.html"
+                                    aria-label="UPI / QR lagayein"><span>UPI / QR lagayein</span> <i
+                                        class="fa-solid fa-arrow-right"></i></a></div>
+                        </div>
+                        
+                    </div>
+                </div><button type="button" class="sb-x" aria-label="Dismiss" onclick="this.closest('.sb').remove()"><i class="fa-solid fa-xmark"></i></button><i class="sb-p" style="width:80%" title="4 / 5 poora"></i>
+            </div>
+            <script>(function () { var r = document.getElementById("setupBar"), t = r.querySelector(".sb-track"), d = r.querySelectorAll(".sb-d button"), n = t.children.length, i = 0, tm = null, x0 = null, hold = false; t.appendChild(t.children[0].cloneNode(true)); t.lastChild.setAttribute("aria-hidden", "true"); function put(k, anim) { t.style.transition = anim ? "" : "none"; t.style.transform = "translateX(-" + k * 100 + "%)"; if (!anim) t.offsetWidth; } function mark() { d.forEach(function (b, j) { b.className = j === i % n ? "on" : ""; }); } function next() { if (i >= n) { i = 0; put(0, false); } i++; put(i, true); mark(); } function go(k) { i = (k + n) % n; put(i, true); mark(); } t.addEventListener("transitionend", function () { if (i >= n) { i = 0; put(0, false); } }); function play() { clearInterval(tm); tm = setInterval(function () { if (!hold && !document.hidden) next(); }, 3800); } d.forEach(function (b, j) { b.onclick = function () { go(j); play(); }; }); r.addEventListener("mouseover", function (e) { hold = !!e.target.closest(".sb-a"); }); r.addEventListener("mouseleave", function () { hold = false; }); r.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; hold = true; }, { passive: true }); r.addEventListener("touchend", function (e) { var dx = e.changedTouches[0].clientX - x0; hold = false; if (Math.abs(dx) > 40) { if (dx < 0) next(); else go(i - 1); } play(); }); r.addEventListener("touchcancel", function () { hold = false; }); mark(); play(); })();</script>
+            <div class="card row between" style="border-color:#bfe8cf;background:#f3fbf6">
+                <div><b><i class="fa-solid fa-link green"></i> Students can also register themselves</b>
+                    <div class="small muted">Send your link; students join your institute directly after filling the
+                        form.</div>
+                </div><button type="button" class="btn btn-gold" data-reglink="">See register link</button>
+            </div>
+            <style>
+                .rl-bg {
+                    position: fixed;
+                    inset: 0;
+                    z-index: 1200;
+                    background: rgba(4, 20, 12, .55);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 16px;
+                    overflow: auto
+                }
+
+                .rl {
+                    background: #fff;
+                    border-radius: 20px;
+                    max-width: 560px;
+                    width: 100%;
+                    padding: 22px;
+                    position: relative;
+                    max-height: calc(100vh - 32px);
+                    overflow: auto
+                }
+
+                .rl-x {
+                    position: absolute;
+                    right: 14px;
+                    top: 12px;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    border: 0;
+                    background: var(--brand-l);
+                    font-size: 22px;
+                    cursor: pointer;
+                    line-height: 1
+                }
+
+                .rl-q {
+                    width: 190px;
+                    margin: 0 auto;
+                    padding: 10px;
+                    border: 1px solid var(--line);
+                    border-radius: 14px
+                }
+
+                .rl-q svg {
+                    width: 100%;
+                    height: auto;
+                    display: block
+                }
+
+                .rl ol {
+                    margin: 0;
+                    padding-left: 20px;
+                    line-height: 1.9;
+                    font-size: 14px
+                }
+            </style>
+            <div class="rl-bg" id="regBox" role="dialog" aria-modal="true" aria-label="Student register link" hidden="">
+                <div class="rl"><button type="button" class="rl-x" aria-label="Close">×</button>
+                    <h3 style="margin:0 40px 4px 0"><i class="fa-solid fa-user-plus green"></i> Students register
+                        themselves</h3>
+                    <p class="small muted" style="margin:0 0 12px"><b><span data-u="inst.name">Lakshya Classes</span></b> · Code <span data-u="inst.code">BR836811</span></p>
+                    <div class="rl-q" id="rlQr"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 167 167" preserveAspectRatio="xMinYMin meet">
+                            <rect width="100%" height="100%" fill="white" cx="0" cy="0"></rect>
+                            <path
+                                d="M1,1l5,0 0,5 -5,0 0,-5z M6,1l5,0 0,5 -5,0 0,-5z M11,1l5,0 0,5 -5,0 0,-5z M16,1l5,0 0,5 -5,0 0,-5z M21,1l5,0 0,5 -5,0 0,-5z M26,1l5,0 0,5 -5,0 0,-5z M31,1l5,0 0,5 -5,0 0,-5z M46,1l5,0 0,5 -5,0 0,-5z M51,1l5,0 0,5 -5,0 0,-5z M61,1l5,0 0,5 -5,0 0,-5z M66,1l5,0 0,5 -5,0 0,-5z M86,1l5,0 0,5 -5,0 0,-5z M91,1l5,0 0,5 -5,0 0,-5z M96,1l5,0 0,5 -5,0 0,-5z M101,1l5,0 0,5 -5,0 0,-5z M116,1l5,0 0,5 -5,0 0,-5z M131,1l5,0 0,5 -5,0 0,-5z M136,1l5,0 0,5 -5,0 0,-5z M141,1l5,0 0,5 -5,0 0,-5z M146,1l5,0 0,5 -5,0 0,-5z M151,1l5,0 0,5 -5,0 0,-5z M156,1l5,0 0,5 -5,0 0,-5z M161,1l5,0 0,5 -5,0 0,-5z M1,6l5,0 0,5 -5,0 0,-5z M31,6l5,0 0,5 -5,0 0,-5z M51,6l5,0 0,5 -5,0 0,-5z M56,6l5,0 0,5 -5,0 0,-5z M61,6l5,0 0,5 -5,0 0,-5z M66,6l5,0 0,5 -5,0 0,-5z M71,6l5,0 0,5 -5,0 0,-5z M76,6l5,0 0,5 -5,0 0,-5z M86,6l5,0 0,5 -5,0 0,-5z M101,6l5,0 0,5 -5,0 0,-5z M111,6l5,0 0,5 -5,0 0,-5z M131,6l5,0 0,5 -5,0 0,-5z M161,6l5,0 0,5 -5,0 0,-5z M1,11l5,0 0,5 -5,0 0,-5z M11,11l5,0 0,5 -5,0 0,-5z M16,11l5,0 0,5 -5,0 0,-5z M21,11l5,0 0,5 -5,0 0,-5z M31,11l5,0 0,5 -5,0 0,-5z M41,11l5,0 0,5 -5,0 0,-5z M51,11l5,0 0,5 -5,0 0,-5z M56,11l5,0 0,5 -5,0 0,-5z M66,11l5,0 0,5 -5,0 0,-5z M81,11l5,0 0,5 -5,0 0,-5z M86,11l5,0 0,5 -5,0 0,-5z M91,11l5,0 0,5 -5,0 0,-5z M121,11l5,0 0,5 -5,0 0,-5z M131,11l5,0 0,5 -5,0 0,-5z M141,11l5,0 0,5 -5,0 0,-5z M146,11l5,0 0,5 -5,0 0,-5z M151,11l5,0 0,5 -5,0 0,-5z M161,11l5,0 0,5 -5,0 0,-5z M1,16l5,0 0,5 -5,0 0,-5z M11,16l5,0 0,5 -5,0 0,-5z M16,16l5,0 0,5 -5,0 0,-5z M21,16l5,0 0,5 -5,0 0,-5z M31,16l5,0 0,5 -5,0 0,-5z M41,16l5,0 0,5 -5,0 0,-5z M46,16l5,0 0,5 -5,0 0,-5z M61,16l5,0 0,5 -5,0 0,-5z M71,16l5,0 0,5 -5,0 0,-5z M81,16l5,0 0,5 -5,0 0,-5z M101,16l5,0 0,5 -5,0 0,-5z M106,16l5,0 0,5 -5,0 0,-5z M111,16l5,0 0,5 -5,0 0,-5z M116,16l5,0 0,5 -5,0 0,-5z M121,16l5,0 0,5 -5,0 0,-5z M131,16l5,0 0,5 -5,0 0,-5z M141,16l5,0 0,5 -5,0 0,-5z M146,16l5,0 0,5 -5,0 0,-5z M151,16l5,0 0,5 -5,0 0,-5z M161,16l5,0 0,5 -5,0 0,-5z M1,21l5,0 0,5 -5,0 0,-5z M11,21l5,0 0,5 -5,0 0,-5z M16,21l5,0 0,5 -5,0 0,-5z M21,21l5,0 0,5 -5,0 0,-5z M31,21l5,0 0,5 -5,0 0,-5z M41,21l5,0 0,5 -5,0 0,-5z M61,21l5,0 0,5 -5,0 0,-5z M66,21l5,0 0,5 -5,0 0,-5z M76,21l5,0 0,5 -5,0 0,-5z M91,21l5,0 0,5 -5,0 0,-5z M106,21l5,0 0,5 -5,0 0,-5z M121,21l5,0 0,5 -5,0 0,-5z M131,21l5,0 0,5 -5,0 0,-5z M141,21l5,0 0,5 -5,0 0,-5z M146,21l5,0 0,5 -5,0 0,-5z M151,21l5,0 0,5 -5,0 0,-5z M161,21l5,0 0,5 -5,0 0,-5z M1,26l5,0 0,5 -5,0 0,-5z M31,26l5,0 0,5 -5,0 0,-5z M41,26l5,0 0,5 -5,0 0,-5z M51,26l5,0 0,5 -5,0 0,-5z M66,26l5,0 0,5 -5,0 0,-5z M71,26l5,0 0,5 -5,0 0,-5z M76,26l5,0 0,5 -5,0 0,-5z M81,26l5,0 0,5 -5,0 0,-5z M101,26l5,0 0,5 -5,0 0,-5z M106,26l5,0 0,5 -5,0 0,-5z M111,26l5,0 0,5 -5,0 0,-5z M131,26l5,0 0,5 -5,0 0,-5z M161,26l5,0 0,5 -5,0 0,-5z M1,31l5,0 0,5 -5,0 0,-5z M6,31l5,0 0,5 -5,0 0,-5z M11,31l5,0 0,5 -5,0 0,-5z M16,31l5,0 0,5 -5,0 0,-5z M21,31l5,0 0,5 -5,0 0,-5z M26,31l5,0 0,5 -5,0 0,-5z M31,31l5,0 0,5 -5,0 0,-5z M41,31l5,0 0,5 -5,0 0,-5z M51,31l5,0 0,5 -5,0 0,-5z M61,31l5,0 0,5 -5,0 0,-5z M71,31l5,0 0,5 -5,0 0,-5z M81,31l5,0 0,5 -5,0 0,-5z M91,31l5,0 0,5 -5,0 0,-5z M101,31l5,0 0,5 -5,0 0,-5z M111,31l5,0 0,5 -5,0 0,-5z M121,31l5,0 0,5 -5,0 0,-5z M131,31l5,0 0,5 -5,0 0,-5z M136,31l5,0 0,5 -5,0 0,-5z M141,31l5,0 0,5 -5,0 0,-5z M146,31l5,0 0,5 -5,0 0,-5z M151,31l5,0 0,5 -5,0 0,-5z M156,31l5,0 0,5 -5,0 0,-5z M161,31l5,0 0,5 -5,0 0,-5z M41,36l5,0 0,5 -5,0 0,-5z M76,36l5,0 0,5 -5,0 0,-5z M91,36l5,0 0,5 -5,0 0,-5z M106,36l5,0 0,5 -5,0 0,-5z M121,36l5,0 0,5 -5,0 0,-5z M1,41l5,0 0,5 -5,0 0,-5z M11,41l5,0 0,5 -5,0 0,-5z M16,41l5,0 0,5 -5,0 0,-5z M21,41l5,0 0,5 -5,0 0,-5z M26,41l5,0 0,5 -5,0 0,-5z M31,41l5,0 0,5 -5,0 0,-5z M46,41l5,0 0,5 -5,0 0,-5z M51,41l5,0 0,5 -5,0 0,-5z M56,41l5,0 0,5 -5,0 0,-5z M61,41l5,0 0,5 -5,0 0,-5z M66,41l5,0 0,5 -5,0 0,-5z M71,41l5,0 0,5 -5,0 0,-5z M76,41l5,0 0,5 -5,0 0,-5z M86,41l5,0 0,5 -5,0 0,-5z M111,41l5,0 0,5 -5,0 0,-5z M121,41l5,0 0,5 -5,0 0,-5z M131,41l5,0 0,5 -5,0 0,-5z M136,41l5,0 0,5 -5,0 0,-5z M141,41l5,0 0,5 -5,0 0,-5z M146,41l5,0 0,5 -5,0 0,-5z M151,41l5,0 0,5 -5,0 0,-5z M1,46l5,0 0,5 -5,0 0,-5z M11,46l5,0 0,5 -5,0 0,-5z M16,46l5,0 0,5 -5,0 0,-5z M21,46l5,0 0,5 -5,0 0,-5z M36,46l5,0 0,5 -5,0 0,-5z M46,46l5,0 0,5 -5,0 0,-5z M56,46l5,0 0,5 -5,0 0,-5z M61,46l5,0 0,5 -5,0 0,-5z M71,46l5,0 0,5 -5,0 0,-5z M81,46l5,0 0,5 -5,0 0,-5z M91,46l5,0 0,5 -5,0 0,-5z M96,46l5,0 0,5 -5,0 0,-5z M101,46l5,0 0,5 -5,0 0,-5z M106,46l5,0 0,5 -5,0 0,-5z M111,46l5,0 0,5 -5,0 0,-5z M116,46l5,0 0,5 -5,0 0,-5z M131,46l5,0 0,5 -5,0 0,-5z M136,46l5,0 0,5 -5,0 0,-5z M146,46l5,0 0,5 -5,0 0,-5z M151,46l5,0 0,5 -5,0 0,-5z M156,46l5,0 0,5 -5,0 0,-5z M161,46l5,0 0,5 -5,0 0,-5z M11,51l5,0 0,5 -5,0 0,-5z M16,51l5,0 0,5 -5,0 0,-5z M21,51l5,0 0,5 -5,0 0,-5z M31,51l5,0 0,5 -5,0 0,-5z M36,51l5,0 0,5 -5,0 0,-5z M46,51l5,0 0,5 -5,0 0,-5z M56,51l5,0 0,5 -5,0 0,-5z M76,51l5,0 0,5 -5,0 0,-5z M81,51l5,0 0,5 -5,0 0,-5z M91,51l5,0 0,5 -5,0 0,-5z M101,51l5,0 0,5 -5,0 0,-5z M106,51l5,0 0,5 -5,0 0,-5z M121,51l5,0 0,5 -5,0 0,-5z M131,51l5,0 0,5 -5,0 0,-5z M141,51l5,0 0,5 -5,0 0,-5z M151,51l5,0 0,5 -5,0 0,-5z M1,56l5,0 0,5 -5,0 0,-5z M16,56l5,0 0,5 -5,0 0,-5z M21,56l5,0 0,5 -5,0 0,-5z M36,56l5,0 0,5 -5,0 0,-5z M41,56l5,0 0,5 -5,0 0,-5z M71,56l5,0 0,5 -5,0 0,-5z M81,56l5,0 0,5 -5,0 0,-5z M96,56l5,0 0,5 -5,0 0,-5z M101,56l5,0 0,5 -5,0 0,-5z M106,56l5,0 0,5 -5,0 0,-5z M111,56l5,0 0,5 -5,0 0,-5z M116,56l5,0 0,5 -5,0 0,-5z M141,56l5,0 0,5 -5,0 0,-5z M146,56l5,0 0,5 -5,0 0,-5z M151,56l5,0 0,5 -5,0 0,-5z M6,61l5,0 0,5 -5,0 0,-5z M21,61l5,0 0,5 -5,0 0,-5z M26,61l5,0 0,5 -5,0 0,-5z M31,61l5,0 0,5 -5,0 0,-5z M41,61l5,0 0,5 -5,0 0,-5z M51,61l5,0 0,5 -5,0 0,-5z M56,61l5,0 0,5 -5,0 0,-5z M91,61l5,0 0,5 -5,0 0,-5z M96,61l5,0 0,5 -5,0 0,-5z M106,61l5,0 0,5 -5,0 0,-5z M141,61l5,0 0,5 -5,0 0,-5z M146,61l5,0 0,5 -5,0 0,-5z M1,66l5,0 0,5 -5,0 0,-5z M11,66l5,0 0,5 -5,0 0,-5z M21,66l5,0 0,5 -5,0 0,-5z M36,66l5,0 0,5 -5,0 0,-5z M41,66l5,0 0,5 -5,0 0,-5z M46,66l5,0 0,5 -5,0 0,-5z M61,66l5,0 0,5 -5,0 0,-5z M71,66l5,0 0,5 -5,0 0,-5z M76,66l5,0 0,5 -5,0 0,-5z M81,66l5,0 0,5 -5,0 0,-5z M86,66l5,0 0,5 -5,0 0,-5z M101,66l5,0 0,5 -5,0 0,-5z M111,66l5,0 0,5 -5,0 0,-5z M116,66l5,0 0,5 -5,0 0,-5z M121,66l5,0 0,5 -5,0 0,-5z M126,66l5,0 0,5 -5,0 0,-5z M131,66l5,0 0,5 -5,0 0,-5z M136,66l5,0 0,5 -5,0 0,-5z M146,66l5,0 0,5 -5,0 0,-5z M156,66l5,0 0,5 -5,0 0,-5z M161,66l5,0 0,5 -5,0 0,-5z M1,71l5,0 0,5 -5,0 0,-5z M6,71l5,0 0,5 -5,0 0,-5z M11,71l5,0 0,5 -5,0 0,-5z M16,71l5,0 0,5 -5,0 0,-5z M21,71l5,0 0,5 -5,0 0,-5z M26,71l5,0 0,5 -5,0 0,-5z M31,71l5,0 0,5 -5,0 0,-5z M46,71l5,0 0,5 -5,0 0,-5z M56,71l5,0 0,5 -5,0 0,-5z M71,71l5,0 0,5 -5,0 0,-5z M96,71l5,0 0,5 -5,0 0,-5z M106,71l5,0 0,5 -5,0 0,-5z M126,71l5,0 0,5 -5,0 0,-5z M131,71l5,0 0,5 -5,0 0,-5z M136,71l5,0 0,5 -5,0 0,-5z M141,71l5,0 0,5 -5,0 0,-5z M146,71l5,0 0,5 -5,0 0,-5z M156,71l5,0 0,5 -5,0 0,-5z M6,76l5,0 0,5 -5,0 0,-5z M16,76l5,0 0,5 -5,0 0,-5z M21,76l5,0 0,5 -5,0 0,-5z M36,76l5,0 0,5 -5,0 0,-5z M56,76l5,0 0,5 -5,0 0,-5z M71,76l5,0 0,5 -5,0 0,-5z M81,76l5,0 0,5 -5,0 0,-5z M96,76l5,0 0,5 -5,0 0,-5z M101,76l5,0 0,5 -5,0 0,-5z M106,76l5,0 0,5 -5,0 0,-5z M111,76l5,0 0,5 -5,0 0,-5z M121,76l5,0 0,5 -5,0 0,-5z M126,76l5,0 0,5 -5,0 0,-5z M131,76l5,0 0,5 -5,0 0,-5z M136,76l5,0 0,5 -5,0 0,-5z M146,76l5,0 0,5 -5,0 0,-5z M151,76l5,0 0,5 -5,0 0,-5z M11,81l5,0 0,5 -5,0 0,-5z M21,81l5,0 0,5 -5,0 0,-5z M26,81l5,0 0,5 -5,0 0,-5z M31,81l5,0 0,5 -5,0 0,-5z M36,81l5,0 0,5 -5,0 0,-5z M41,81l5,0 0,5 -5,0 0,-5z M56,81l5,0 0,5 -5,0 0,-5z M61,81l5,0 0,5 -5,0 0,-5z M86,81l5,0 0,5 -5,0 0,-5z M96,81l5,0 0,5 -5,0 0,-5z M111,81l5,0 0,5 -5,0 0,-5z M126,81l5,0 0,5 -5,0 0,-5z M136,81l5,0 0,5 -5,0 0,-5z M141,81l5,0 0,5 -5,0 0,-5z M161,81l5,0 0,5 -5,0 0,-5z M1,86l5,0 0,5 -5,0 0,-5z M6,86l5,0 0,5 -5,0 0,-5z M11,86l5,0 0,5 -5,0 0,-5z M26,86l5,0 0,5 -5,0 0,-5z M46,86l5,0 0,5 -5,0 0,-5z M56,86l5,0 0,5 -5,0 0,-5z M66,86l5,0 0,5 -5,0 0,-5z M71,86l5,0 0,5 -5,0 0,-5z M81,86l5,0 0,5 -5,0 0,-5z M86,86l5,0 0,5 -5,0 0,-5z M91,86l5,0 0,5 -5,0 0,-5z M96,86l5,0 0,5 -5,0 0,-5z M116,86l5,0 0,5 -5,0 0,-5z M126,86l5,0 0,5 -5,0 0,-5z M131,86l5,0 0,5 -5,0 0,-5z M136,86l5,0 0,5 -5,0 0,-5z M146,86l5,0 0,5 -5,0 0,-5z M151,86l5,0 0,5 -5,0 0,-5z M156,86l5,0 0,5 -5,0 0,-5z M161,86l5,0 0,5 -5,0 0,-5z M16,91l5,0 0,5 -5,0 0,-5z M21,91l5,0 0,5 -5,0 0,-5z M26,91l5,0 0,5 -5,0 0,-5z M31,91l5,0 0,5 -5,0 0,-5z M36,91l5,0 0,5 -5,0 0,-5z M41,91l5,0 0,5 -5,0 0,-5z M51,91l5,0 0,5 -5,0 0,-5z M61,91l5,0 0,5 -5,0 0,-5z M66,91l5,0 0,5 -5,0 0,-5z M71,91l5,0 0,5 -5,0 0,-5z M76,91l5,0 0,5 -5,0 0,-5z M81,91l5,0 0,5 -5,0 0,-5z M86,91l5,0 0,5 -5,0 0,-5z M111,91l5,0 0,5 -5,0 0,-5z M121,91l5,0 0,5 -5,0 0,-5z M136,91l5,0 0,5 -5,0 0,-5z M141,91l5,0 0,5 -5,0 0,-5z M151,91l5,0 0,5 -5,0 0,-5z M156,91l5,0 0,5 -5,0 0,-5z M1,96l5,0 0,5 -5,0 0,-5z M11,96l5,0 0,5 -5,0 0,-5z M21,96l5,0 0,5 -5,0 0,-5z M36,96l5,0 0,5 -5,0 0,-5z M41,96l5,0 0,5 -5,0 0,-5z M46,96l5,0 0,5 -5,0 0,-5z M51,96l5,0 0,5 -5,0 0,-5z M66,96l5,0 0,5 -5,0 0,-5z M76,96l5,0 0,5 -5,0 0,-5z M86,96l5,0 0,5 -5,0 0,-5z M91,96l5,0 0,5 -5,0 0,-5z M96,96l5,0 0,5 -5,0 0,-5z M101,96l5,0 0,5 -5,0 0,-5z M126,96l5,0 0,5 -5,0 0,-5z M131,96l5,0 0,5 -5,0 0,-5z M136,96l5,0 0,5 -5,0 0,-5z M141,96l5,0 0,5 -5,0 0,-5z M146,96l5,0 0,5 -5,0 0,-5z M151,96l5,0 0,5 -5,0 0,-5z M6,101l5,0 0,5 -5,0 0,-5z M11,101l5,0 0,5 -5,0 0,-5z M16,101l5,0 0,5 -5,0 0,-5z M31,101l5,0 0,5 -5,0 0,-5z M41,101l5,0 0,5 -5,0 0,-5z M46,101l5,0 0,5 -5,0 0,-5z M61,101l5,0 0,5 -5,0 0,-5z M81,101l5,0 0,5 -5,0 0,-5z M96,101l5,0 0,5 -5,0 0,-5z M101,101l5,0 0,5 -5,0 0,-5z M106,101l5,0 0,5 -5,0 0,-5z M111,101l5,0 0,5 -5,0 0,-5z M146,101l5,0 0,5 -5,0 0,-5z M161,101l5,0 0,5 -5,0 0,-5z M1,106l5,0 0,5 -5,0 0,-5z M6,106l5,0 0,5 -5,0 0,-5z M11,106l5,0 0,5 -5,0 0,-5z M26,106l5,0 0,5 -5,0 0,-5z M51,106l5,0 0,5 -5,0 0,-5z M56,106l5,0 0,5 -5,0 0,-5z M61,106l5,0 0,5 -5,0 0,-5z M66,106l5,0 0,5 -5,0 0,-5z M76,106l5,0 0,5 -5,0 0,-5z M86,106l5,0 0,5 -5,0 0,-5z M91,106l5,0 0,5 -5,0 0,-5z M106,106l5,0 0,5 -5,0 0,-5z M116,106l5,0 0,5 -5,0 0,-5z M121,106l5,0 0,5 -5,0 0,-5z M126,106l5,0 0,5 -5,0 0,-5z M131,106l5,0 0,5 -5,0 0,-5z M161,106l5,0 0,5 -5,0 0,-5z M1,111l5,0 0,5 -5,0 0,-5z M11,111l5,0 0,5 -5,0 0,-5z M16,111l5,0 0,5 -5,0 0,-5z M26,111l5,0 0,5 -5,0 0,-5z M31,111l5,0 0,5 -5,0 0,-5z M41,111l5,0 0,5 -5,0 0,-5z M46,111l5,0 0,5 -5,0 0,-5z M51,111l5,0 0,5 -5,0 0,-5z M61,111l5,0 0,5 -5,0 0,-5z M66,111l5,0 0,5 -5,0 0,-5z M76,111l5,0 0,5 -5,0 0,-5z M81,111l5,0 0,5 -5,0 0,-5z M91,111l5,0 0,5 -5,0 0,-5z M101,111l5,0 0,5 -5,0 0,-5z M106,111l5,0 0,5 -5,0 0,-5z M121,111l5,0 0,5 -5,0 0,-5z M126,111l5,0 0,5 -5,0 0,-5z M136,111l5,0 0,5 -5,0 0,-5z M141,111l5,0 0,5 -5,0 0,-5z M146,111l5,0 0,5 -5,0 0,-5z M151,111l5,0 0,5 -5,0 0,-5z M156,111l5,0 0,5 -5,0 0,-5z M1,116l5,0 0,5 -5,0 0,-5z M11,116l5,0 0,5 -5,0 0,-5z M26,116l5,0 0,5 -5,0 0,-5z M36,116l5,0 0,5 -5,0 0,-5z M41,116l5,0 0,5 -5,0 0,-5z M56,116l5,0 0,5 -5,0 0,-5z M71,116l5,0 0,5 -5,0 0,-5z M76,116l5,0 0,5 -5,0 0,-5z M106,116l5,0 0,5 -5,0 0,-5z M111,116l5,0 0,5 -5,0 0,-5z M121,116l5,0 0,5 -5,0 0,-5z M126,116l5,0 0,5 -5,0 0,-5z M136,116l5,0 0,5 -5,0 0,-5z M151,116l5,0 0,5 -5,0 0,-5z M1,121l5,0 0,5 -5,0 0,-5z M16,121l5,0 0,5 -5,0 0,-5z M26,121l5,0 0,5 -5,0 0,-5z M31,121l5,0 0,5 -5,0 0,-5z M36,121l5,0 0,5 -5,0 0,-5z M41,121l5,0 0,5 -5,0 0,-5z M51,121l5,0 0,5 -5,0 0,-5z M76,121l5,0 0,5 -5,0 0,-5z M86,121l5,0 0,5 -5,0 0,-5z M116,121l5,0 0,5 -5,0 0,-5z M121,121l5,0 0,5 -5,0 0,-5z M126,121l5,0 0,5 -5,0 0,-5z M131,121l5,0 0,5 -5,0 0,-5z M136,121l5,0 0,5 -5,0 0,-5z M141,121l5,0 0,5 -5,0 0,-5z M146,121l5,0 0,5 -5,0 0,-5z M156,121l5,0 0,5 -5,0 0,-5z M161,121l5,0 0,5 -5,0 0,-5z M41,126l5,0 0,5 -5,0 0,-5z M46,126l5,0 0,5 -5,0 0,-5z M51,126l5,0 0,5 -5,0 0,-5z M61,126l5,0 0,5 -5,0 0,-5z M66,126l5,0 0,5 -5,0 0,-5z M81,126l5,0 0,5 -5,0 0,-5z M96,126l5,0 0,5 -5,0 0,-5z M101,126l5,0 0,5 -5,0 0,-5z M106,126l5,0 0,5 -5,0 0,-5z M116,126l5,0 0,5 -5,0 0,-5z M121,126l5,0 0,5 -5,0 0,-5z M141,126l5,0 0,5 -5,0 0,-5z M151,126l5,0 0,5 -5,0 0,-5z M161,126l5,0 0,5 -5,0 0,-5z M1,131l5,0 0,5 -5,0 0,-5z M6,131l5,0 0,5 -5,0 0,-5z M11,131l5,0 0,5 -5,0 0,-5z M16,131l5,0 0,5 -5,0 0,-5z M21,131l5,0 0,5 -5,0 0,-5z M26,131l5,0 0,5 -5,0 0,-5z M31,131l5,0 0,5 -5,0 0,-5z M51,131l5,0 0,5 -5,0 0,-5z M56,131l5,0 0,5 -5,0 0,-5z M61,131l5,0 0,5 -5,0 0,-5z M66,131l5,0 0,5 -5,0 0,-5z M76,131l5,0 0,5 -5,0 0,-5z M81,131l5,0 0,5 -5,0 0,-5z M91,131l5,0 0,5 -5,0 0,-5z M101,131l5,0 0,5 -5,0 0,-5z M106,131l5,0 0,5 -5,0 0,-5z M116,131l5,0 0,5 -5,0 0,-5z M121,131l5,0 0,5 -5,0 0,-5z M131,131l5,0 0,5 -5,0 0,-5z M141,131l5,0 0,5 -5,0 0,-5z M151,131l5,0 0,5 -5,0 0,-5z M156,131l5,0 0,5 -5,0 0,-5z M1,136l5,0 0,5 -5,0 0,-5z M31,136l5,0 0,5 -5,0 0,-5z M41,136l5,0 0,5 -5,0 0,-5z M46,136l5,0 0,5 -5,0 0,-5z M51,136l5,0 0,5 -5,0 0,-5z M56,136l5,0 0,5 -5,0 0,-5z M106,136l5,0 0,5 -5,0 0,-5z M111,136l5,0 0,5 -5,0 0,-5z M116,136l5,0 0,5 -5,0 0,-5z M121,136l5,0 0,5 -5,0 0,-5z M141,136l5,0 0,5 -5,0 0,-5z M146,136l5,0 0,5 -5,0 0,-5z M151,136l5,0 0,5 -5,0 0,-5z M1,141l5,0 0,5 -5,0 0,-5z M11,141l5,0 0,5 -5,0 0,-5z M16,141l5,0 0,5 -5,0 0,-5z M21,141l5,0 0,5 -5,0 0,-5z M31,141l5,0 0,5 -5,0 0,-5z M41,141l5,0 0,5 -5,0 0,-5z M46,141l5,0 0,5 -5,0 0,-5z M51,141l5,0 0,5 -5,0 0,-5z M56,141l5,0 0,5 -5,0 0,-5z M61,141l5,0 0,5 -5,0 0,-5z M76,141l5,0 0,5 -5,0 0,-5z M91,141l5,0 0,5 -5,0 0,-5z M96,141l5,0 0,5 -5,0 0,-5z M106,141l5,0 0,5 -5,0 0,-5z M121,141l5,0 0,5 -5,0 0,-5z M126,141l5,0 0,5 -5,0 0,-5z M131,141l5,0 0,5 -5,0 0,-5z M136,141l5,0 0,5 -5,0 0,-5z M141,141l5,0 0,5 -5,0 0,-5z M146,141l5,0 0,5 -5,0 0,-5z M1,146l5,0 0,5 -5,0 0,-5z M11,146l5,0 0,5 -5,0 0,-5z M16,146l5,0 0,5 -5,0 0,-5z M21,146l5,0 0,5 -5,0 0,-5z M31,146l5,0 0,5 -5,0 0,-5z M41,146l5,0 0,5 -5,0 0,-5z M46,146l5,0 0,5 -5,0 0,-5z M51,146l5,0 0,5 -5,0 0,-5z M56,146l5,0 0,5 -5,0 0,-5z M61,146l5,0 0,5 -5,0 0,-5z M66,146l5,0 0,5 -5,0 0,-5z M71,146l5,0 0,5 -5,0 0,-5z M76,146l5,0 0,5 -5,0 0,-5z M81,146l5,0 0,5 -5,0 0,-5z M101,146l5,0 0,5 -5,0 0,-5z M111,146l5,0 0,5 -5,0 0,-5z M116,146l5,0 0,5 -5,0 0,-5z M121,146l5,0 0,5 -5,0 0,-5z M126,146l5,0 0,5 -5,0 0,-5z M141,146l5,0 0,5 -5,0 0,-5z M146,146l5,0 0,5 -5,0 0,-5z M161,146l5,0 0,5 -5,0 0,-5z M1,151l5,0 0,5 -5,0 0,-5z M11,151l5,0 0,5 -5,0 0,-5z M16,151l5,0 0,5 -5,0 0,-5z M21,151l5,0 0,5 -5,0 0,-5z M31,151l5,0 0,5 -5,0 0,-5z M41,151l5,0 0,5 -5,0 0,-5z M46,151l5,0 0,5 -5,0 0,-5z M51,151l5,0 0,5 -5,0 0,-5z M56,151l5,0 0,5 -5,0 0,-5z M66,151l5,0 0,5 -5,0 0,-5z M71,151l5,0 0,5 -5,0 0,-5z M86,151l5,0 0,5 -5,0 0,-5z M91,151l5,0 0,5 -5,0 0,-5z M96,151l5,0 0,5 -5,0 0,-5z M111,151l5,0 0,5 -5,0 0,-5z M116,151l5,0 0,5 -5,0 0,-5z M131,151l5,0 0,5 -5,0 0,-5z M136,151l5,0 0,5 -5,0 0,-5z M146,151l5,0 0,5 -5,0 0,-5z M151,151l5,0 0,5 -5,0 0,-5z M1,156l5,0 0,5 -5,0 0,-5z M31,156l5,0 0,5 -5,0 0,-5z M46,156l5,0 0,5 -5,0 0,-5z M61,156l5,0 0,5 -5,0 0,-5z M66,156l5,0 0,5 -5,0 0,-5z M71,156l5,0 0,5 -5,0 0,-5z M81,156l5,0 0,5 -5,0 0,-5z M96,156l5,0 0,5 -5,0 0,-5z M101,156l5,0 0,5 -5,0 0,-5z M106,156l5,0 0,5 -5,0 0,-5z M116,156l5,0 0,5 -5,0 0,-5z M126,156l5,0 0,5 -5,0 0,-5z M141,156l5,0 0,5 -5,0 0,-5z M146,156l5,0 0,5 -5,0 0,-5z M151,156l5,0 0,5 -5,0 0,-5z M1,161l5,0 0,5 -5,0 0,-5z M6,161l5,0 0,5 -5,0 0,-5z M11,161l5,0 0,5 -5,0 0,-5z M16,161l5,0 0,5 -5,0 0,-5z M21,161l5,0 0,5 -5,0 0,-5z M26,161l5,0 0,5 -5,0 0,-5z M31,161l5,0 0,5 -5,0 0,-5z M41,161l5,0 0,5 -5,0 0,-5z M51,161l5,0 0,5 -5,0 0,-5z M56,161l5,0 0,5 -5,0 0,-5z M81,161l5,0 0,5 -5,0 0,-5z M86,161l5,0 0,5 -5,0 0,-5z M96,161l5,0 0,5 -5,0 0,-5z M111,161l5,0 0,5 -5,0 0,-5z M121,161l5,0 0,5 -5,0 0,-5z M131,161l5,0 0,5 -5,0 0,-5z M136,161l5,0 0,5 -5,0 0,-5z M151,161l5,0 0,5 -5,0 0,-5z M156,161l5,0 0,5 -5,0 0,-5z "
+                                stroke="transparent" fill="black"></path>
+                        </svg></div>
+                    <div class="row" style="margin:12px 0;flex-wrap:nowrap"><input class="input" id="rlLink"
+                            value="https://umtvidya.in/admission.html?i=BR836811" readonly=""><button
+                            class="btn btn-primary" type="button" id="rlCopy"><i class="fa-solid fa-copy"></i>
+                            Copy</button></div>
+                    <div class="row" style="justify-content:center;margin-bottom:14px"><a class="btn btn-sm"
+                            style="background:#25d366;color:#fff" target="_blank" rel="noopener"
+                            href="https://wa.me/?text=Namaste%21%20Lakshya%20Classes%20me%20register%20karne%20ke%20liye%20is%20link%20par%20form%20bharein%3A%0Ahttps%3A%2F%2Fumtvidya.in%2Fadmission.html%3Fi%3DBR836811"><i
+                                class="fa-brands fa-whatsapp"></i> Send on WhatsApp</a><button
+                            class="btn btn-light btn-sm" type="button" id="rlDl"><i class="fa-solid fa-download"></i> QR
+                            download</button><a class="btn btn-light btn-sm" target="_blank"
+                            href="https://umtvidya.in/admission.html?i=BR836811"><i class="fa-solid fa-eye"></i> View
+                            form</a></div>
+                    <div style="border:1px solid #bfe8cf;background:#f3fbf6;border-radius:14px;padding:12px 14px;margin-bottom:14px"
+                        class="row between">
+                        <div style="flex:1;min-width:190px"><b>Or add a student yourself</b>
+                            <div class="small muted">Fill the form yourself and add the student.</div>
+                        </div><a class="btn btn-primary btn-sm" href="student-add.html"><i
+                                class="fa-solid fa-user-plus"></i> Add student</a>
+                    </div>
+                    <ol>
+                        <li>Ye link / QR apne students ko bhejein.</li>
+                        <li>Student link kholega to <b>sirf aapke institute</b> ka form khulega — naam, course, photo
+                            aur password khud bharega.</li>
+                        <li>Form aapke <a href="students-pending.html"><b>Pending Approval</b></a> me
+                            aayega. Approve karte hi wo aapka student ban jayega.</li>
+                        <li>Phir wo apne mobile + password se login karke certificate, ID card, fees aur exam dekhega.
+                        </li>
+                    </ol>
+                    <div class="row between" style="margin-top:14px;border-top:1px solid var(--line);padding-top:12px">
+                        <span class="small">Link se aaye: <b>2</b> · Approve baaki: <b
+                                style="color:#d92d20">1</b></span><a class="btn btn-light btn-sm"
+                            href="admission.html"><i class="fa-solid fa-gear"></i> Form / fee / documents
+                            setting</a></div>
+                </div>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+            <script>(function () { var b = document.getElementById("regBox"), L = "https://umtvidya.in/admission.html?i=BR836811", q = null; try { q = qrcode(0, "M"); q.addData(L); q.make(); document.getElementById("rlQr").innerHTML = q.createSvgTag({ cellSize: 5, margin: 1, scalable: true }); } catch (e) { document.getElementById("rlQr").hidden = true; } function show(v) { b.hidden = !v; document.body.style.overflow = v ? "hidden" : ""; } document.addEventListener("click", function (e) { if (e.target.closest("[data-reglink]")) { e.preventDefault(); show(true); } else if (e.target === b || e.target.closest(".rl-x")) show(false); }); document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !b.hidden) show(false); }); document.getElementById("rlCopy").onclick = function () { var i = document.getElementById("rlLink"), ok = function () { SPop.toast("success", "Link copy ho gaya"); }; if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(L).then(ok, function () { i.select(); document.execCommand("copy"); ok(); }); else { i.select(); document.execCommand("copy"); ok(); } }; document.getElementById("rlDl").onclick = function () { if (!q) return; var n = q.getModuleCount(), s = 12, c = document.createElement("canvas"); c.width = c.height = (n + 4) * s; var g = c.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, c.width, c.height); g.fillStyle = "#000"; for (var r = 0; r < n; r++)for (var k = 0; k < n; k++)if (q.isDark(r, k)) g.fillRect((k + 2) * s, (r + 2) * s, s, s); c.toBlob(function (x) { var a = document.createElement("a"); a.href = URL.createObjectURL(x); a.download = "register_BR836811.png"; document.body.appendChild(a); a.click(); a.remove(); }); }; if (location.hash === "#reg") show(true); })();</script>
+            <form class="card" method="post" enctype="multipart/form-data"><input type="hidden" name="_csrf"
+                    value="8fe35934d07735bb7c296afa5f6e503fd357c59d28dae2af8a70087cef924389">
+                <div class="card-head">
+                    <h3><i class="fa-solid fa-user-graduate green"></i> New Student</h3>
+                    <a class="btn btn-light btn-sm" href="bulk-students.html"><i class="fa-solid fa-file-excel"></i>
+                        Add many from Excel</a>
+                </div>
+                <div class="grid g3">
+                    <div class="field"><label>First Name <span class="req">*</span></label><input class="input"
+                            name="name" value="" required=""></div>
+                    <div class="field"><label>Last Name</label><input class="input" name="last_name" value=""></div>
+                    <div class="field"><label>Father's Name <span class="req">*</span></label><input class="input"
+                            name="father_name" value="" required=""></div>
+                    <div class="field"><label>Mother's Name</label><input class="input" name="mother_name" value="">
+                    </div>
+                    <div class="field"><label>Date of Birth <span class="req">*</span></label><input class="input"
+                            type="date" name="dob" value="" required=""></div>
+                    <div class="field"><label>Gender</label><select class="input" name="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select></div>
+                    <div class="field"><label>Category</label><select class="input" name="category">
+                            <option selected=""></option>
+                            <option>General</option>
+                            <option>OBC</option>
+                            <option>SC</option>
+                            <option>ST</option>
+                            <option>EWS</option>
+                        </select></div>
+                    <div class="field"><label>Aadhaar</label><input class="input" name="aadhaar" value=""
+                            inputmode="numeric" maxlength="14"></div>
+                    <div class="field"><label>Mobile</label>
+                        <div class="ph">
+                            <div class="ss-wrap"><select class="input ss-native" name="mobile_cc"
+                                    aria-label="Country code" data-ss="1" tabindex="-1">
+                                    <option value="91" selected="">+91 India</option>
+                                    <option value="977">+977 Nepal</option>
+                                    <option value="880">+880 Bangladesh</option>
+                                    <option value="975">+975 Bhutan</option>
+                                    <option value="94">+94 Sri Lanka</option>
+                                    <option value="92">+92 Pakistan</option>
+                                    <option value="971">+971 United Arab Emirates</option>
+                                    <option value="966">+966 Saudi Arabia</option>
+                                    <option value="974">+974 Qatar</option>
+                                    <option value="965">+965 Kuwait</option>
+                                    <option value="968">+968 Oman</option>
+                                    <option value="973">+973 Bahrain</option>
+                                    <option value="1">+1 USA / Canada</option>
+                                    <option value="44">+44 United Kingdom</option>
+                                    <option value="61">+61 Australia</option>
+                                    <option value="93">+93 Afghanistan</option>
+                                    <option value="355">+355 Albania</option>
+                                    <option value="213">+213 Algeria</option>
+                                    <option value="1684">+1684 American Samoa</option>
+                                    <option value="376">+376 Andorra</option>
+                                    <option value="244">+244 Angola</option>
+                                    <option value="1264">+1264 Anguilla</option>
+                                    <option value="1268">+1268 Antigua &amp; Barbuda</option>
+                                    <option value="54">+54 Argentina</option>
+                                    <option value="374">+374 Armenia</option>
+                                    <option value="297">+297 Aruba</option>
+                                    <option value="43">+43 Austria</option>
+                                    <option value="994">+994 Azerbaijan</option>
+                                    <option value="1242">+1242 Bahamas</option>
+                                    <option value="1246">+1246 Barbados</option>
+                                    <option value="375">+375 Belarus</option>
+                                    <option value="32">+32 Belgium</option>
+                                    <option value="501">+501 Belize</option>
+                                    <option value="229">+229 Benin</option>
+                                    <option value="1441">+1441 Bermuda</option>
+                                    <option value="591">+591 Bolivia</option>
+                                    <option value="387">+387 Bosnia &amp; Herzegovina</option>
+                                    <option value="267">+267 Botswana</option>
+                                    <option value="55">+55 Brazil</option>
+                                    <option value="246">+246 British Indian Ocean Territory</option>
+                                    <option value="1284">+1284 British Virgin Islands</option>
+                                    <option value="673">+673 Brunei</option>
+                                    <option value="359">+359 Bulgaria</option>
+                                    <option value="226">+226 Burkina Faso</option>
+                                    <option value="257">+257 Burundi</option>
+                                    <option value="855">+855 Cambodia</option>
+                                    <option value="237">+237 Cameroon</option>
+                                    <option value="238">+238 Cape Verde</option>
+                                    <option value="599">+599 Caribbean Netherlands / Curacao</option>
+                                    <option value="1345">+1345 Cayman Islands</option>
+                                    <option value="236">+236 Central African Republic</option>
+                                    <option value="235">+235 Chad</option>
+                                    <option value="56">+56 Chile</option>
+                                    <option value="86">+86 China</option>
+                                    <option value="57">+57 Colombia</option>
+                                    <option value="269">+269 Comoros</option>
+                                    <option value="242">+242 Congo</option>
+                                    <option value="243">+243 Congo (DR)</option>
+                                    <option value="682">+682 Cook Islands</option>
+                                    <option value="506">+506 Costa Rica</option>
+                                    <option value="225">+225 Cote d'Ivoire</option>
+                                    <option value="385">+385 Croatia</option>
+                                    <option value="53">+53 Cuba</option>
+                                    <option value="357">+357 Cyprus</option>
+                                    <option value="420">+420 Czechia</option>
+                                    <option value="45">+45 Denmark</option>
+                                    <option value="253">+253 Djibouti</option>
+                                    <option value="1767">+1767 Dominica</option>
+                                    <option value="1809">+1809 Dominican Republic</option>
+                                    <option value="593">+593 Ecuador</option>
+                                    <option value="20">+20 Egypt</option>
+                                    <option value="503">+503 El Salvador</option>
+                                    <option value="240">+240 Equatorial Guinea</option>
+                                    <option value="291">+291 Eritrea</option>
+                                    <option value="372">+372 Estonia</option>
+                                    <option value="268">+268 Eswatini</option>
+                                    <option value="251">+251 Ethiopia</option>
+                                    <option value="500">+500 Falkland Islands</option>
+                                    <option value="298">+298 Faroe Islands</option>
+                                    <option value="679">+679 Fiji</option>
+                                    <option value="358">+358 Finland</option>
+                                    <option value="33">+33 France</option>
+                                    <option value="594">+594 French Guiana</option>
+                                    <option value="689">+689 French Polynesia</option>
+                                    <option value="241">+241 Gabon</option>
+                                    <option value="220">+220 Gambia</option>
+                                    <option value="995">+995 Georgia</option>
+                                    <option value="49">+49 Germany</option>
+                                    <option value="233">+233 Ghana</option>
+                                    <option value="350">+350 Gibraltar</option>
+                                    <option value="30">+30 Greece</option>
+                                    <option value="299">+299 Greenland</option>
+                                    <option value="1473">+1473 Grenada</option>
+                                    <option value="590">+590 Guadeloupe</option>
+                                    <option value="1671">+1671 Guam</option>
+                                    <option value="502">+502 Guatemala</option>
+                                    <option value="224">+224 Guinea</option>
+                                    <option value="245">+245 Guinea-Bissau</option>
+                                    <option value="592">+592 Guyana</option>
+                                    <option value="509">+509 Haiti</option>
+                                    <option value="504">+504 Honduras</option>
+                                    <option value="852">+852 Hong Kong</option>
+                                    <option value="36">+36 Hungary</option>
+                                    <option value="354">+354 Iceland</option>
+                                    <option value="62">+62 Indonesia</option>
+                                    <option value="98">+98 Iran</option>
+                                    <option value="964">+964 Iraq</option>
+                                    <option value="353">+353 Ireland</option>
+                                    <option value="972">+972 Israel</option>
+                                    <option value="39">+39 Italy</option>
+                                    <option value="1876">+1876 Jamaica</option>
+                                    <option value="81">+81 Japan</option>
+                                    <option value="962">+962 Jordan</option>
+                                    <option value="7">+7 Kazakhstan / Russia</option>
+                                    <option value="254">+254 Kenya</option>
+                                    <option value="686">+686 Kiribati</option>
+                                    <option value="383">+383 Kosovo</option>
+                                    <option value="996">+996 Kyrgyzstan</option>
+                                    <option value="856">+856 Laos</option>
+                                    <option value="371">+371 Latvia</option>
+                                    <option value="961">+961 Lebanon</option>
+                                    <option value="266">+266 Lesotho</option>
+                                    <option value="231">+231 Liberia</option>
+                                    <option value="218">+218 Libya</option>
+                                    <option value="423">+423 Liechtenstein</option>
+                                    <option value="370">+370 Lithuania</option>
+                                    <option value="352">+352 Luxembourg</option>
+                                    <option value="853">+853 Macau</option>
+                                    <option value="261">+261 Madagascar</option>
+                                    <option value="265">+265 Malawi</option>
+                                    <option value="60">+60 Malaysia</option>
+                                    <option value="960">+960 Maldives</option>
+                                    <option value="223">+223 Mali</option>
+                                    <option value="356">+356 Malta</option>
+                                    <option value="692">+692 Marshall Islands</option>
+                                    <option value="596">+596 Martinique</option>
+                                    <option value="222">+222 Mauritania</option>
+                                    <option value="230">+230 Mauritius</option>
+                                    <option value="262">+262 Mayotte / Reunion</option>
+                                    <option value="52">+52 Mexico</option>
+                                    <option value="691">+691 Micronesia</option>
+                                    <option value="373">+373 Moldova</option>
+                                    <option value="377">+377 Monaco</option>
+                                    <option value="976">+976 Mongolia</option>
+                                    <option value="382">+382 Montenegro</option>
+                                    <option value="1664">+1664 Montserrat</option>
+                                    <option value="212">+212 Morocco</option>
+                                    <option value="258">+258 Mozambique</option>
+                                    <option value="95">+95 Myanmar</option>
+                                    <option value="264">+264 Namibia</option>
+                                    <option value="674">+674 Nauru</option>
+                                    <option value="31">+31 Netherlands</option>
+                                    <option value="687">+687 New Caledonia</option>
+                                    <option value="64">+64 New Zealand</option>
+                                    <option value="505">+505 Nicaragua</option>
+                                    <option value="227">+227 Niger</option>
+                                    <option value="234">+234 Nigeria</option>
+                                    <option value="683">+683 Niue</option>
+                                    <option value="850">+850 North Korea</option>
+                                    <option value="389">+389 North Macedonia</option>
+                                    <option value="1670">+1670 Northern Mariana Islands</option>
+                                    <option value="47">+47 Norway</option>
+                                    <option value="680">+680 Palau</option>
+                                    <option value="970">+970 Palestine</option>
+                                    <option value="507">+507 Panama</option>
+                                    <option value="675">+675 Papua New Guinea</option>
+                                    <option value="595">+595 Paraguay</option>
+                                    <option value="51">+51 Peru</option>
+                                    <option value="63">+63 Philippines</option>
+                                    <option value="48">+48 Poland</option>
+                                    <option value="351">+351 Portugal</option>
+                                    <option value="1787">+1787 Puerto Rico</option>
+                                    <option value="40">+40 Romania</option>
+                                    <option value="250">+250 Rwanda</option>
+                                    <option value="290">+290 Saint Helena</option>
+                                    <option value="1869">+1869 Saint Kitts &amp; Nevis</option>
+                                    <option value="1758">+1758 Saint Lucia</option>
+                                    <option value="508">+508 Saint Pierre &amp; Miquelon</option>
+                                    <option value="1784">+1784 Saint Vincent</option>
+                                    <option value="685">+685 Samoa</option>
+                                    <option value="378">+378 San Marino</option>
+                                    <option value="239">+239 Sao Tome &amp; Principe</option>
+                                    <option value="221">+221 Senegal</option>
+                                    <option value="381">+381 Serbia</option>
+                                    <option value="248">+248 Seychelles</option>
+                                    <option value="232">+232 Sierra Leone</option>
+                                    <option value="65">+65 Singapore</option>
+                                    <option value="1721">+1721 Sint Maarten</option>
+                                    <option value="421">+421 Slovakia</option>
+                                    <option value="386">+386 Slovenia</option>
+                                    <option value="677">+677 Solomon Islands</option>
+                                    <option value="252">+252 Somalia</option>
+                                    <option value="27">+27 South Africa</option>
+                                    <option value="82">+82 South Korea</option>
+                                    <option value="211">+211 South Sudan</option>
+                                    <option value="34">+34 Spain</option>
+                                    <option value="249">+249 Sudan</option>
+                                    <option value="597">+597 Suriname</option>
+                                    <option value="46">+46 Sweden</option>
+                                    <option value="41">+41 Switzerland</option>
+                                    <option value="963">+963 Syria</option>
+                                    <option value="886">+886 Taiwan</option>
+                                    <option value="992">+992 Tajikistan</option>
+                                    <option value="255">+255 Tanzania</option>
+                                    <option value="66">+66 Thailand</option>
+                                    <option value="670">+670 Timor-Leste</option>
+                                    <option value="228">+228 Togo</option>
+                                    <option value="690">+690 Tokelau</option>
+                                    <option value="676">+676 Tonga</option>
+                                    <option value="1868">+1868 Trinidad &amp; Tobago</option>
+                                    <option value="216">+216 Tunisia</option>
+                                    <option value="90">+90 Turkey</option>
+                                    <option value="993">+993 Turkmenistan</option>
+                                    <option value="1649">+1649 Turks &amp; Caicos</option>
+                                    <option value="688">+688 Tuvalu</option>
+                                    <option value="256">+256 Uganda</option>
+                                    <option value="380">+380 Ukraine</option>
+                                    <option value="598">+598 Uruguay</option>
+                                    <option value="1340">+1340 US Virgin Islands</option>
+                                    <option value="998">+998 Uzbekistan</option>
+                                    <option value="678">+678 Vanuatu</option>
+                                    <option value="58">+58 Venezuela</option>
+                                    <option value="84">+84 Vietnam</option>
+                                    <option value="681">+681 Wallis &amp; Futuna</option>
+                                    <option value="967">+967 Yemen</option>
+                                    <option value="260">+260 Zambia</option>
+                                    <option value="263">+263 Zimbabwe</option>
+                                </select><button type="button" class="input ss-btn" title="+91 India">+91 India</button>
+                                <div class="ss-pop" hidden="">
+                                    <div class="ss-search"><i class="fa-solid fa-magnifying-glass"></i><input
+                                            type="text" placeholder="Search / dhundein..." autocomplete="off"></div>
+                                    <div class="ss-list" role="listbox"></div>
+                                    <div class="ss-foot"></div>
+                                </div>
+                            </div><input class="input" type="tel" name="mobile" value="" inputmode="tel" maxlength="20"
+                                autocomplete="tel-national">
+                        </div>
+                    </div>
+                    <div class="field"><label>Email</label><input class="input" type="email" name="email" value="">
+                    </div>
+                    <div class="field span2"><label>Address</label><input class="input" name="address" value=""></div>
+                </div>
+                <h3 style="margin-top:6px">Course / Class</h3>
+                <div class="grid g3">
+                    <div class="field"><label>Institute Name</label><input class="input" value="Lakshya Classes"
+                            disabled=""></div>
+                    <div class="field"><label>Course / Class <span class="req">*</span></label><select class="input"
+                            name="course_id" required="">
+                            <option value="">Select</option>
+                            <option value="497">Bachelor in Science(Hons.) (4 Years)</option>
+                            <option value="135">Certificate in Airport Management Services (3 Months)</option>
+                        </select></div>
+                    <div class="field"><label>Session Year</label><input class="input" name="session" value="2026-27">
+                    </div>
+                    <div class="field"><label>Roll No. (blank = auto)</label><input class="input" name="roll_no"
+                            value=""></div>
+                    <div class="field"><label>Section / Batch</label><input class="input" name="class_section" value="">
+                    </div>
+                    <div class="field"><label>Admission Date</label><input class="input" type="date"
+                            name="admission_date" value="2026-11-25"></div>
+                </div>
+                <h3 style="margin-top:6px">Fee &amp; Referral</h3>
+                <div class="grid g3">
+                    <div class="field"><label>One-time Fee (admission / course) ₹</label><input class="input"
+                            type="number" step="1" min="0" name="total_fee" value="" placeholder="blank = course fee">
+                    </div>
+                    <div class="field"><label>Monthly Fee ₹ (added automatically every month)</label><input
+                            class="input" type="number" step="1" min="0" name="monthly_fee" value=""></div>
+                    <div class="field"><label>Referred By (student's Enrollment No.)</label><input class="input"
+                            name="referred_by" value="">
+                        <div class="hint">The student who brought this admission — they get the commission.</div>
+                    </div>
+                </div>
+                <h3 style="margin-top:6px">Photo &amp; Documents</h3>
+                <div class="grid g3">
+                    <div class="field"><label>Student Photo <span class="req">*</span></label>
+                        <div class="row"><img id="pv" class="avatar-lg" src="../assets/img/reg-student.svg" alt=""><input
+                                class="input" type="file" name="photo" accept="image/*" data-preview="#pv"
+                                style="flex:1"></div>
+                    </div>
+                    <div class="field"><label>10th Certificate</label><input class="input" type="file" name="doc_10th"
+                            accept="image/*,application/pdf"></div>
+                    <div class="field"><label>12th Certificate</label><input class="input" type="file" name="doc_12th"
+                            accept="image/*,application/pdf"></div>
+                    <div class="field"><label>Aadhaar Card (photo / PDF)</label><input class="input" type="file"
+                            name="aadhaar_doc" accept="image/*,application/pdf"></div>
+                    <div class="field"><label>Other Document</label><input class="input" type="file" name="other_doc"
+                            accept="image/*,application/pdf"></div>
+                    <div class="field"><label>Student Login Password (blank = DOB DDMMYYYY)</label><input class="input"
+                            type="text" name="password" autocomplete="off" minlength="6"></div>
+                </div>
+                <div class="row" style="justify-content:flex-end">
+                    <a class="btn btn-danger" href="students.html">Cancel</a>
+                    <button class="btn btn-light" name="next" value="more"><i class="fa-solid fa-plus"></i> Save &amp;
+                        Add Another</button> <button class="btn btn-primary"><i class="fa-solid fa-check"></i>
+                        Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a class="wa-fab"
+        href="https://wa.me/919262882138?text=Hello%20AADI%20Support%2C%20mujhe%20help%20chahiye.%0A%0AInstitute%3A%20Lakshya%20Classes%20%28BR836811%29%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Fpanel%2Fstudent-add.html"
+        target="_blank" rel="noopener" aria-label="WhatsApp Support" title="WhatsApp Support"><i
+            class="fa-brands fa-whatsapp"></i></a>
+    <div id="eduBot" class="ebot"
+        data-bot="{&quot;name&quot;:&quot;Vidya Didi&quot;,&quot;hello&quot;:&quot;Hello! 🙏 How can I help you? Choose a question below or type one.&quot;,&quot;faq&quot;:[{&quot;q&quot;:&quot;How do I get an institute ID?&quot;,&quot;a&quot;:&quot;Choose \&quot;College / Institute\&quot; on the Register page and fill the form. Admin verifies and activates the ID. WhatsApp for quicker service.&quot;},{&quot;q&quot;:&quot;How to create a certificate?&quot;,&quot;a&quot;:&quot;Institute panel → Documents → Generate. Choose students or upload Excel, see the preview, then Generate. Instant PDF / ZIP download.&quot;},{&quot;q&quot;:&quot;Bulk certificates from Excel?&quot;,&quot;a&quot;:&quot;Panel → Bulk Excel. Download the sample Excel, fill it, upload it. Charged per certificate, then download all in one click.&quot;},{&quot;q&quot;:&quot;How to recharge the wallet?&quot;,&quot;a&quot;:&quot;Panel → Wallet → enter the amount and Pay. The balance is added automatically as soon as the UPI payment is done.&quot;},{&quot;q&quot;:&quot;How to verify a certificate?&quot;,&quot;a&quot;:&quot;Enter the certificate number in \&quot;Verify Certificate\&quot; on the home page or scan the certificate's QR.&quot;},{&quot;q&quot;:&quot;How do students log in?&quot;,&quot;a&quot;:&quot;Login page → Student. Mobile ya Enrollment No. aur password daalein. Naye student Register → Student se free account banayein, phir dashboard se online course lein ya jitne chahein institute ko join request bhejein.&quot;}],&quot;links&quot;:[[&quot;Generate Certificate&quot;,&quot;/panel/generate.html&quot;],[&quot;Bulk Excel&quot;,&quot;/panel/bulk.html&quot;],[&quot;Add Student&quot;,&quot;/panel/student-add.html&quot;],[&quot;Subscription &amp; Balance&quot;,&quot;/panel/subscription.html&quot;]],&quot;wa&quot;:&quot;https://wa.me/919262882138?text=Hello%20AADI%20Support%2C%20mujhe%20help%20chahiye%3A%0A%0AInstitute%3A%20Lakshya%20Classes%20%28BR836811%29%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Fpanel%2Fstudent-add.html&quot;,&quot;phone&quot;:&quot;+919262882138&quot;}">
+        <button class="ebot-fab" type="button" aria-label="Help"><span class="ebot-face"><i class="eye l"></i><i
+                    class="eye r"></i><i class="mouth"></i></span><span class="ebot-ping"></span></button>
+        <div class="ebot-box" hidden="">
+            <div class="ebot-head"><span class="ebot-avatar"><i class="fa-solid fa-graduation-cap"></i></span>
+                <div><b>Vidya Didi</b><small>Online · Help Assistant</small></div><button type="button" class="ebot-x"
+                    aria-label="Close">×</button>
+            </div>
+            <div class="ebot-msgs"></div>
+            <div class="ebot-quick"></div>
+            <form class="ebot-form"><input type="text" placeholder="Type your question..." maxlength="200"><button
+                    aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button></form>
+        </div>
+    </div>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/search-scroll.js"></script>
+
+    <script src="../assets/js/static-fix.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script type="module" src="../assets/js/umt-pages.js"></script>
+</body>
+</html>
