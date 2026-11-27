@@ -1,0 +1,39 @@
+/* umt.css — styles for the Firebase layer, auth pages and the new pages */
+#umtToasts{position:fixed;right:18px;top:18px;z-index:9999;display:flex;flex-direction:column;gap:8px;max-width:min(380px,92vw)}
+.umt-toast{background:#0b8a4a;color:#fff;padding:11px 16px;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.2);font-size:14px;font-weight:600;transition:opacity .3s}
+.umt-toast.err{background:#c0392b}.umt-toast.warn{background:#b7791f}
+#umtPreview{background:#fff7e0;border-bottom:1px solid #f1d98a;color:#7a5a00;text-align:center;padding:8px 12px;font-size:13px}
+#umtPreview code{background:#fff;border:1px solid #f1d98a;border-radius:6px;padding:1px 6px}
+.auth-card .tabs{display:flex;gap:6px;margin:12px 0 16px}
+.auth-card .tabs a{flex:1;text-align:center}
+.pw{position:relative}.pw .input{padding-right:44px}
+.pw button{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);cursor:pointer;padding:8px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:640px){.form-grid{grid-template-columns:1fr}}
+.form-grid .full{grid-column:1/-1}
+.auth-card.wide{max-width:720px}
+.ok-box{border:1.5px solid #bfe6d0;background:#f1fbf5;border-radius:14px;padding:18px;text-align:center}
+.ok-box .big{font-size:28px;font-weight:800;color:var(--brand);letter-spacing:1px;margin:6px 0}
+.pub-hero{background:linear-gradient(120deg,#0b8a4a,#066b39);color:#fff;padding:34px 0}
+.pub-hero h1{margin:0 0 6px;font-size:30px}.pub-hero p{margin:0;opacity:.92}
+.pub-sec{padding:28px 0}.wrap-narrow{max-width:900px;margin:0 auto;padding:0 16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.tile{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink)}
+.tile:hover{border-color:var(--brand);box-shadow:0 8px 20px rgba(11,138,74,.12)}
+.tile i{font-size:24px;color:var(--brand)}.tile b{font-size:15px}.tile small{color:var(--muted)}
+.empty{padding:26px;text-align:center;color:var(--muted)}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:700;background:#eef2f0;color:#4b5b54}
+.badge.ok{background:#e3f7ec;color:#0b7a4b}.badge.warn{background:#fff3d6;color:#996200}.badge.bad{background:#ffe6e2;color:#b42318}
+/* printable documents */
+.docpage{background:#e9efec;min-height:100vh;padding:20px}
+.docbar{max-width:900px;margin:0 auto 14px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.sheet{background:#fff;max-width:900px;margin:0 auto;padding:36px 44px;border:10px double #0b8a4a;box-shadow:0 10px 30px rgba(0,0,0,.12);position:relative}
+.sheet h1{text-align:center;color:#0b6b3a;margin:6px 0 2px;font-size:30px;letter-spacing:1px}
+.sheet .inst{text-align:center;font-weight:800;font-size:22px}.sheet .sub{text-align:center;color:#555;font-size:13px}
+.sheet .body{font-size:17px;line-height:2;margin:24px 0;text-align:center}
+.sheet .body b{color:#0b6b3a;border-bottom:1px dashed #9ab}
+.sheet table{width:100%;border-collapse:collapse;margin:16px 0}.sheet td,.sheet th{border:1px solid #cdd;padding:8px 10px;text-align:left}
+.sheet .foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:34px;font-size:13px}
+.sheet .sign{border-top:1px solid #333;padding-top:4px;min-width:160px;text-align:center}
+.sheet.idcard{max-width:380px;border-width:6px;padding:20px;text-align:center}
+@media print{body *{visibility:hidden}.sheet,.sheet *{visibility:visible}.sheet{position:absolute;left:0;top:0;width:100%;box-shadow:none;margin:0}.docbar,#umtToasts{display:none}}
