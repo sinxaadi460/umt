@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | AADI</title>
+  <meta name="description"
+    content="Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one portal">
+  <meta property="og:title" content="Register | AADI">
+  <meta property="og:description"
+    content="Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one portal">
+  <meta property="og:image" content="https://umtvidya.in/assets/img/logo.svg">
+  <meta property="og:url" content="https://umtvidya.in/login.html">
+  <meta name="theme-color" content="#0b8a4a">
+  <link rel="icon" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Noto+Sans+Devanagari:wght@400;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/search-scroll.css">
+  <style>
+    :root {
+      --brand: #0b8a4a
+    }
+  </style>
+  <script>window.APP = { lang: "en", base: "", csrf: "9f86b140ea67f49f8704e8d385b3c83a3d4fdb169531e25974843064553c1400" };</script>
+      <link rel="stylesheet" href="assets/css/umt.css">
+</head>
+
+<body class="public">
+  <div class="topstrip">
+    <div class="wrap"><span><i class="fa-solid fa-phone"></i> <a href="tel:+919262882138">+919262882138</a></span>
+      <span class="hide-sm"><i class="fa-brands fa-whatsapp"></i> <a
+          href="https://wa.me/919262882138?text=Hello%2C%20mujhe%20AADI%20ke%20baare%20me%20jaankari%20chahiye.%0A%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Flogin.html"
+          target="_blank" rel="noopener">WhatsApp Support</a></span>
+      <span class="hide-sm">Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one
+        portal</span>
+      <div class="lang-tg" title="Language"><a class=""
+          href="lang.html?l=hi&amp;back=%2Fregister.html">हिंglish</a><a class="on"
+          href="lang.html?l=en&amp;back=%2Fregister.html">EN</a></div>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="wrap head-row">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt=""><span>AADI</span></a>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')"><i
+          class="fa-solid fa-bars"></i></button>
+      <nav class="main-nav">
+        <a class="" href="index.html">Home</a><a class="" href="courses.html">Courses</a><a class=""
+          href="online-courses.html">Online Courses</a><a class="" href="verify.html">Verify</a><a class=""
+          href="tools.html">Free Tools</a><a class="" href="admission.html">Admission</a><a class=""
+          href="centers.html">Centres</a><a class="" href="franchise.html">Franchise</a> <a class="btn btn-light btn-sm"
+          href="login.html">Login</a><a class="btn btn-primary btn-sm" href="register.html">Register</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main">
+
+    <div class="auth-wrap"><div class="auth-card wide">
+      <div id="rgChoose">
+        <h2>Register as</h2>
+        <p class="center muted">Aap kaun hain? Ek option chunein.</p>
+        <div class="choice-grid">
+          <a class="choice" href="?as=institute"><img src="assets/img/logo.svg" alt=""><b>College / Institute</b><small>Computer centre, school, college, coaching ya koi bhi institute. Register karte hi ID active ho jayegi.</small></a>
+          <a class="choice" href="?as=student"><img src="assets/img/logo.svg" alt=""><b>Student</b><small>Free student account banayein, apna institute chunein aur online course lein.</small></a>
+        </div>
+        <p class="center small muted" style="margin-top:14px"><i class="fa-solid fa-chalkboard-user"></i> <b>Teacher?</b> Teacher ka login aapka institute banata hai (Panel &rarr; Teachers / Staff Logins). Phir <a href="login.html?as=teacher">Teacher tab</a> se login karein.</p>
+        <p class="center small muted" style="margin-top:12px">Pehle se account hai? <a href="login.html">Login</a></p>
+      </div>
+
+      <div id="rgInst" hidden>
+        <h2>Institute Registration</h2>
+        <p class="center muted small">Free account. Register karte hi aapka Institute Code ban jayega.</p>
+        <div class="alert alert-danger" id="riErr" hidden></div>
+        <form id="riForm" novalidate onsubmit="return false;">
+          <div class="form-grid">
+            <div class="field full"><label>Institute / Centre ka naam *</label><input class="input" name="instName" maxlength="90"></div>
+            <div class="field"><label>Institute type</label><select class="input" name="type"><option>Computer Centre</option><option>Coaching</option><option>School</option><option>College</option><option>Skill Development Centre</option><option>Vocational / ITI</option><option>NGO / Trust</option><option>Other</option></select></div>
+            <div class="field"><label>Owner / Director ka naam *</label><input class="input" name="ownerName" maxlength="70"></div>
+            <div class="field"><label>Mobile number *</label><input class="input" name="mobile" type="tel" inputmode="numeric" maxlength="14" placeholder="10 digit"></div>
+            <div class="field"><label>Email *</label><input class="input" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label>State</label><select class="input" name="state"><option value="">Select state</option><option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option><option>Andaman & Nicobar</option><option>Chandigarh</option><option>Dadra & Nagar Haveli and Daman & Diu</option><option>Delhi</option><option>Jammu & Kashmir</option><option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option></select></div>
+            <div class="field"><label>City / District</label><input class="input" name="city" maxlength="60"></div>
+            <div class="field"><label>Pincode</label><input class="input" name="pincode" inputmode="numeric" maxlength="6"></div>
+            <div class="field"><label>Referral code (optional)</label><input class="input" name="referral" id="riRef" maxlength="12" placeholder="e.g. BR123456"></div>
+            <div class="field full"><label>Address</label><input class="input" name="address" maxlength="160"></div>
+            <div class="field"><label>Password * (min 6)</label><input class="input" name="password" type="password" autocomplete="new-password"></div>
+            <div class="field"><label>Confirm password *</label><input class="input" name="password2" type="password" autocomplete="new-password"></div>
+            <label class="full small"><input type="checkbox" name="terms"> Main <a href="page.html?p=terms" target="_blank">Terms &amp; Conditions</a> aur <a href="page.html?p=privacy" target="_blank">Privacy Policy</a> se sahmat hu.</label>
+          </div>
+          <button class="btn btn-primary btn-block btn-lg" id="riBtn" style="margin-top:14px">Create Institute Account</button>
+        </form>
+        <p class="center small muted" style="margin-top:14px"><a href="register.html">&larr; Back</a> · Pehle se account hai? <a href="login.html?as=institute">Login</a></p>
+      </div>
+
+      <div id="rgStu" hidden>
+        <h2>Student Registration</h2>
+        <p class="center muted small">Free account. Apna Enrollment No. register karte hi mil jayega.</p>
+        <div class="alert alert-danger" id="rsErr" hidden></div>
+        <form id="rsForm" novalidate onsubmit="return false;">
+          <div class="form-grid">
+            <div class="field full"><label>Poora naam *</label><input class="input" name="name" maxlength="70"></div>
+            <div class="field"><label>Mobile number *</label><input class="input" name="mobile" type="tel" inputmode="numeric" maxlength="14" placeholder="10 digit"></div>
+            <div class="field"><label>Email (optional)</label><input class="input" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label>Date of birth</label><input class="input" name="dob" type="date"></div>
+            <div class="field"><label>Gender</label><select class="input" name="gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+            <div class="field"><label>Institute code (optional)</label><input class="input" name="instituteCode" id="rsInst" maxlength="12" placeholder="e.g. BR123456"></div>
+            <div class="field"><label>Referral code (optional)</label><input class="input" name="referral" id="rsRef" maxlength="12"></div>
+            <div class="field"><label>Password * (min 6)</label><input class="input" name="password" type="password" autocomplete="new-password"></div>
+            <div class="field"><label>Confirm password *</label><input class="input" name="password2" type="password" autocomplete="new-password"></div>
+            <label class="full small"><input type="checkbox" name="terms"> Main <a href="page.html?p=terms" target="_blank">Terms &amp; Conditions</a> se sahmat hu.</label>
+          </div>
+          <p class="small muted" style="margin:6px 0 0">Institute code daalne par aapki request us institute ko jayegi; approve hote hi aap unke student ban jayenge.</p>
+          <button class="btn btn-primary btn-block btn-lg" id="rsBtn" style="margin-top:14px">Create Student Account</button>
+        </form>
+        <p class="center small muted" style="margin-top:14px"><a href="register.html">&larr; Back</a> · Pehle se account hai? <a href="login.html?as=student">Login</a></p>
+      </div>
+
+      <div id="rgDone" hidden>
+        <div class="ok-box">
+          <i class="fa-solid fa-circle-check" style="font-size:38px;color:var(--brand)"></i>
+          <h2 style="margin:8px 0">Registration ho gaya!</h2>
+          <div id="rgDoneTxt"></div>
+          <p style="margin:16px 0 0"><a class="btn btn-primary btn-lg" id="rgGo" href="login.html">Dashboard kholein</a></p>
+        </div>
+      </div>
+    </div></div>
+    </main>
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="brand light"><img src="assets/img/logo.svg" alt=""><span>AADI</span></div>
+        <p class="muted-light">Certificates, Marksheets, ID Cards, Attendance, Fees &amp; Online Exams — all on one
+          portal</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4><a href="verify.html">Verify Certificate</a><a href="courses.html">Courses</a><a
+          href="centers.html">Authorised Centres</a><a href="tools.html">Free Education Tools</a><a
+          href="franchise.html">Franchise Enquiry</a>
+      </div>
+      <div>
+        <h4>Information</h4><a href="page.html?p=about">About Us</a><a href="page.html?p=terms">Terms &amp;
+          Conditions</a><a href="page.html?p=privacy">Privacy Policy</a><a href="page.html?p=refund">Refund Policy</a>
+      </div>
+      <div>
+        <h4>Contact</h4><a href="tel:+919262882138"><i class="fa-solid fa-phone"></i> +919262882138</a>
+        <a href="https://wa.me/919262882138?text=Hello%0A%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Flogin.html"
+          target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:admin@umtvidya.in"><i class="fa-solid fa-envelope"></i> admin@umtvidya.in</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 AADI. All rights reserved.</div>
+  </footer>
+  <a class="wa-fab"
+    href="https://wa.me/919262882138?text=Hello%20AADI%20Support%2C%20mujhe%20help%20chahiye.%0A%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Flogin.html"
+    target="_blank" rel="noopener" aria-label="WhatsApp Support" title="WhatsApp Support"><i
+      class="fa-brands fa-whatsapp"></i></a>
+  <div id="eduBot" class="ebot"
+    data-bot="{&quot;name&quot;:&quot;Vidya Didi&quot;,&quot;hello&quot;:&quot;Hello! 🙏 How can I help you? Choose a question below or type one.&quot;,&quot;faq&quot;:[{&quot;q&quot;:&quot;How do I get an institute ID?&quot;,&quot;a&quot;:&quot;Choose \&quot;College / Institute\&quot; on the Register page and fill the form. Admin verifies and activates the ID. WhatsApp for quicker service.&quot;},{&quot;q&quot;:&quot;How to create a certificate?&quot;,&quot;a&quot;:&quot;Institute panel → Documents → Generate. Choose students or upload Excel, see the preview, then Generate. Instant PDF / ZIP download.&quot;},{&quot;q&quot;:&quot;Bulk certificates from Excel?&quot;,&quot;a&quot;:&quot;Panel → Bulk Excel. Download the sample Excel, fill it, upload it. Charged per certificate, then download all in one click.&quot;},{&quot;q&quot;:&quot;How to recharge the wallet?&quot;,&quot;a&quot;:&quot;Panel → Wallet → enter the amount and Pay. The balance is added automatically as soon as the UPI payment is done.&quot;},{&quot;q&quot;:&quot;How to verify a certificate?&quot;,&quot;a&quot;:&quot;Enter the certificate number in \&quot;Verify Certificate\&quot; on the home page or scan the certificate's QR.&quot;},{&quot;q&quot;:&quot;How do students log in?&quot;,&quot;a&quot;:&quot;Login page → Student. Mobile ya Enrollment No. aur password daalein. Naye student Register → Student se free account banayein, phir dashboard se online course lein ya jitne chahein institute ko join request bhejein.&quot;}],&quot;links&quot;:[[&quot;Verify Certificate&quot;,&quot;/verify.html&quot;],[&quot;Register&quot;,&quot;/register.html&quot;],[&quot;Login&quot;,&quot;/login.html&quot;],[&quot;Franchise Enquiry&quot;,&quot;/franchise.html&quot;]],&quot;wa&quot;:&quot;https://wa.me/919262882138?text=Hello%20AADI%20Support%2C%20mujhe%20help%20chahiye%3A%0A%0ALink%3A%20https%3A%2F%2Fumtvidya.in%2Flogin.html&quot;,&quot;phone&quot;:&quot;+919262882138&quot;}">
+    <button class="ebot-fab" type="button" aria-label="Help"><span class="ebot-face"><i class="eye l"></i><i
+          class="eye r"></i><i class="mouth"></i></span><span class="ebot-ping"></span></button>
+    <div class="ebot-box" hidden="">
+      <div class="ebot-head"><span class="ebot-avatar"><i class="fa-solid fa-graduation-cap"></i></span>
+        <div><b>Vidya Didi</b><small>Online · Help Assistant</small></div><button type="button" class="ebot-x"
+          aria-label="Close">×</button>
+      </div>
+      <div class="ebot-msgs"></div>
+      <div class="ebot-quick"></div>
+      <form class="ebot-form"><input type="text" placeholder="Type your question..." maxlength="200"><button
+          aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button></form>
+    </div>
+  </div>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/search-scroll.js"></script>
+
+  
+    <script src="assets/js/static-fix.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script type="module" src="assets/js/umt-pages.js"></script>
+
+<script type="module">
+import { UMT } from './assets/js/umt-core.js';
+const $ = id => document.getElementById(id), qs = new URLSearchParams(location.search);
+const mode = qs.get('as');
+['rgChoose', 'rgInst', 'rgStu', 'rgDone'].forEach(i => $(i).hidden = true);
+$(mode === 'institute' ? 'rgInst' : mode === 'student' ? 'rgStu' : 'rgChoose').hidden = false;
+if (qs.get('ref')) { $('riRef').value = qs.get('ref').toUpperCase(); $('rsRef').value = qs.get('ref').toUpperCase(); }
+if (qs.get('inst')) $('rsInst').value = qs.get('inst').toUpperCase();
+const data = f => Object.fromEntries(new FormData(f).entries());
+function done(html, home) { ['rgInst', 'rgStu'].forEach(i => $(i).hidden = true); $('rgDoneTxt').innerHTML = html; $('rgGo').href = home; $('rgDone').hidden = false; window.scrollTo(0, 0); }
+async function submit(form, errId, btnId, label, fn) {
+  const err = $(errId), btn = $(btnId); err.hidden = true; btn.disabled = true; btn.textContent = 'Please wait…';
+  try {
+    const d = data(form); if (!d.terms) throw new Error('Terms & Conditions se sahmat hona zaroori hai.');
+    if (!UMT.configured) throw new Error('Preview mode: Firebase config set nahi hai (assets/js/firebase-config.js).');
+    await UMT.ready; await fn(d);
+  } catch (e) { err.textContent = e.message; err.hidden = false; err.scrollIntoView({ block: 'center' }); }
+  finally { btn.disabled = false; btn.textContent = label; }
+}
+$('riForm').addEventListener('submit', e => { e.preventDefault(); submit(e.target, 'riErr', 'riBtn', 'Create Institute Account', async d => {
+  const r = await UMT.registerInstitute(d);
+  done('<p>Aapka <b>Institute Code</b></p><div class="big">' + r.code + '</div><p class="small muted">Login ke liye Institute Code, mobile ya email — kuch bhi use kar sakte hain. Is code ko note kar lein.</p>', UMT.home('institute'));
+}); });
+$('rsForm').addEventListener('submit', e => { e.preventDefault(); submit(e.target, 'rsErr', 'rsBtn', 'Create Student Account', async d => {
+  const r = await UMT.registerStudent(d);
+  done('<p>Aapka <b>Enrollment No.</b></p><div class="big">' + r.enrollmentNo + '</div><p class="small muted">Login ke liye Enrollment No., mobile ya email use karein.' + (r.pending ? ' Institute ko aapki join request bhej di gayi hai — approve hote hi aap unke student ban jayenge.' : '') + '</p>', UMT.home('student'));
+}); });
+</script><script>setTimeout(function(){if(!window.UMT){var d=document.createElement("div");d.className="alert alert-danger";d.innerHTML="<b>Page ki script load nahi hui.</b> Site ko <b>https://</b> (Vercel) ya local server se kholein — file se double-click karke nahi. Detail: <a href=\"check.html\"><b>check.html</b></a>";var c=document.querySelector(".auth-card");if(c)c.insertBefore(d,c.firstChild);}},3500);</script></body>
+</html>

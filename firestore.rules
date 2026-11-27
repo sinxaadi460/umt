@@ -1,0 +1,138 @@
+rules_version = '2';
+// AADI — Firestore rules
+// Firebase Console -> Firestore Database -> Rules -> paste this -> Publish
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function meDoc()    { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function hasMe()    { return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function isRole(r)  { return hasMe() && meDoc().role == r; }
+    function ownsInst(code) { return isRole('institute') && meDoc().instituteCode == code; }
+    function staffOf(code)  { return isRole('teacher') && meDoc().instituteCode == code; }
+    function instMember(code) { return ownsInst(code) || staffOf(code); }
+
+    // ---- login lookup: only "get" by exact key (mobile / code / email -> auth email)
+    match /loginIndex/{key} {
+      allow get: if true;
+      allow list: if false;
+      allow create: if signedIn() && request.resource.data.keys().hasOnly(['email', 'role', 'uid']);
+      allow update, delete: if false;
+    }
+
+    // ---- profile of every login
+    match /users/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || resource.data.createdBy == request.auth.uid);
+      allow list: if signedIn() && resource.data.createdBy == request.auth.uid;
+      allow create: if signedIn() && (
+        (request.auth.uid == uid && request.resource.data.role in ['institute', 'student'])
+        || (isRole('institute') && request.resource.data.createdBy == request.auth.uid
+            && ((request.resource.data.role == 'student')
+                || (request.resource.data.role == 'teacher' && request.resource.data.instituteCode == meDoc().instituteCode))));
+      allow update: if signedIn() && request.auth.uid == uid
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.instituteCode == resource.data.instituteCode;
+      allow delete: if false;
+    }
+
+    // ---- institutes: public read (centres list, verify, admission), owner writes
+    match /institutes/{code} {
+      allow read: if true;
+      allow create: if ownsInst(code) && request.resource.data.ownerUid == request.auth.uid;
+      allow update: if ownsInst(code);
+      allow delete: if false;
+    }
+
+    // ---- student person record
+    match /students/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || resource.data.createdBy == request.auth.uid
+        || (hasMe() && meDoc().role in ['institute', 'teacher']
+            && exists(/databases/$(database)/documents/memberships/$(meDoc().instituteCode + '_' + uid))));
+      allow list: if signedIn() && resource.data.createdBy == request.auth.uid;
+      allow create: if signedIn() && (request.auth.uid == uid || (isRole('institute') && request.resource.data.createdBy == request.auth.uid));
+      allow update: if signedIn() && (request.auth.uid == uid || resource.data.createdBy == request.auth.uid);
+      allow delete: if false;
+    }
+
+    // ---- student <-> institute relation (pending / approved / left)
+    match /memberships/{id} {
+      allow read: if signedIn() && (resource.data.studentUid == request.auth.uid || instMember(resource.data.instituteCode));
+      allow create: if signedIn() && (
+        (request.resource.data.studentUid == request.auth.uid && request.resource.data.status == 'pending' && request.resource.data.requestedBy == 'student')
+        || (ownsInst(request.resource.data.instituteCode) && request.resource.data.createdBy == request.auth.uid));
+      allow update: if ownsInst(resource.data.instituteCode);
+      allow delete: if ownsInst(resource.data.instituteCode) || resource.data.studentUid == request.auth.uid;
+    }
+
+    match /staff/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || instMember(resource.data.instituteCode));
+      allow create: if ownsInst(request.resource.data.instituteCode);
+      allow update, delete: if ownsInst(resource.data.instituteCode);
+    }
+
+    match /courses/{id} {
+      allow read: if true;
+      allow create: if ownsInst(request.resource.data.instituteCode);
+      allow update, delete: if ownsInst(resource.data.instituteCode);
+    }
+
+    match /notices/{id} {
+      allow read: if signedIn();
+      allow create: if instMember(request.resource.data.instituteCode);
+      allow update, delete: if ownsInst(resource.data.instituteCode);
+    }
+
+    match /attendance/{id} {
+      allow read: if signedIn() && (resource.data.studentUid == request.auth.uid || instMember(resource.data.instituteCode));
+      allow create: if instMember(request.resource.data.instituteCode);
+      allow update: if instMember(resource.data.instituteCode);
+      allow delete: if ownsInst(resource.data.instituteCode);
+    }
+
+    match /fees/{id} {
+      allow read: if signedIn() && (resource.data.studentUid == request.auth.uid || ownsInst(resource.data.instituteCode));
+      allow create: if ownsInst(request.resource.data.instituteCode);
+      allow update, delete: if ownsInst(resource.data.instituteCode);
+    }
+
+    // ---- issued documents: anyone can verify by number (get), lists only for owner institute / student
+    match /documents/{no} {
+      allow get: if true;
+      allow list: if signedIn() && (resource.data.studentUid == request.auth.uid || ownsInst(resource.data.instituteCode));
+      allow create: if ownsInst(request.resource.data.instituteCode);
+      allow update, delete: if ownsInst(resource.data.instituteCode);
+    }
+
+    match /tickets/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow read: if signedIn() && (resource.data.uid == request.auth.uid || ownsInst(resource.data.instituteCode));
+      allow update: if signedIn() && (resource.data.uid == request.auth.uid || ownsInst(resource.data.instituteCode));
+      allow delete: if false;
+    }
+
+    // ---- public forms
+    match /admissions/{id} {
+      allow create: if true;
+      allow read, update, delete: if ownsInst(resource.data.instituteCode);
+    }
+    match /franchiseEnquiries/{id} {
+      allow create: if true;
+      allow read, update, delete: if false;     // read these in Firebase Console
+    }
+
+    match /affiliations/{code} {
+      allow create: if ownsInst(code) && request.resource.data.status == 'pending';
+      allow read: if ownsInst(code);
+      allow update, delete: if false;           // approve in Firebase Console
+    }
+    match /subFranchises/{id} {
+      allow create: if ownsInst(request.resource.data.parentCode);
+      allow read, update, delete: if ownsInst(resource.data.parentCode);
+    }
+
+    match /enrollments/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow read, delete: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/panel", "destination": "/panel/index.html", "permanent": false },
+    { "source": "/student", "destination": "/student/index.html", "permanent": false },
+    { "source": "/teacher", "destination": "/teacher/index.html", "permanent": false }
+  ]
+}
